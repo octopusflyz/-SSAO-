@@ -1,0 +1,10 @@
+^C:\CODE\COMPUTER_PICTURE\-SSAO-\BUILD\CMAKEFILES\C8CBC8ED5EBFE20255C6107943480E8F\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/code/computer_picture/-SSAO- -BC:/code/computer_picture/-SSAO-/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/code/computer_picture/-SSAO-/build/ogl-intro.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,9 @@
+C:\code\computer_picture\-SSAO-\src\common\application.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Debug\application.obj
+C:\code\computer_picture\-SSAO-\src\common\shader.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Debug\shader.obj
+C:\code\computer_picture\-SSAO-\src\common\mesh.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Debug\mesh.obj
+C:\code\computer_picture\-SSAO-\src\common\data.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Debug\data.obj
+C:\code\computer_picture\-SSAO-\src\common\texture.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Debug\texture.obj
+C:\code\computer_picture\-SSAO-\src\common\gltf.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Debug\gltf.obj
+C:\code\computer_picture\-SSAO-\src\common\framebuffer.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Debug\framebuffer.obj
+C:\code\computer_picture\-SSAO-\src\common\renderer.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Debug\renderer.obj
+C:\code\computer_picture\-SSAO-\src\common\utils.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Debug\utils.obj
