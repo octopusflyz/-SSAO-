@@ -1,9 +1,0 @@
-C:\code\computer_picture\-SSAO-\src\common\application.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Release\application.obj
-C:\code\computer_picture\-SSAO-\src\common\shader.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Release\shader.obj
-C:\code\computer_picture\-SSAO-\src\common\mesh.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Release\mesh.obj
-C:\code\computer_picture\-SSAO-\src\common\data.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Release\data.obj
-C:\code\computer_picture\-SSAO-\src\common\texture.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Release\texture.obj
-C:\code\computer_picture\-SSAO-\src\common\gltf.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Release\gltf.obj
-C:\code\computer_picture\-SSAO-\src\common\framebuffer.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Release\framebuffer.obj
-C:\code\computer_picture\-SSAO-\src\common\renderer.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Release\renderer.obj
-C:\code\computer_picture\-SSAO-\src\common\utils.cpp;C:\code\computer_picture\-SSAO-\build\src\common\common.dir\Release\utils.obj
