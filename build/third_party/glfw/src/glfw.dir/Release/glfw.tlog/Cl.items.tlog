@@ -1,0 +1,15 @@
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\context.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\context.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\init.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\init.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\input.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\input.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\monitor.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\monitor.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\vulkan.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\vulkan.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\window.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\window.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\win32_init.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\win32_init.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\win32_joystick.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\win32_joystick.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\win32_monitor.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\win32_monitor.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\win32_time.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\win32_time.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\win32_thread.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\win32_thread.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\win32_window.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\win32_window.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\wgl_context.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\wgl_context.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\egl_context.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\egl_context.obj
+C:\code\computer_picture\-SSAO-\third_party\glfw\src\osmesa_context.c;C:\code\computer_picture\-SSAO-\build\third_party\glfw\src\glfw.dir\Release\osmesa_context.obj

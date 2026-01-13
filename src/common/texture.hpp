@@ -5,8 +5,8 @@
 #include <glm/glm.hpp>
 
 struct TextureSettings {
-  GLenum wrap_s = GL_MIRRORED_REPEAT;
-  GLenum wrap_t = GL_MIRRORED_REPEAT;
+  GLenum wrap_s = GL_REPEAT;
+  GLenum wrap_t = GL_REPEAT;
   glm::vec4 border_color = glm::vec4(0.0, 0.0, 0.0, 0.0);
   GLenum min_filter = GL_LINEAR_MIPMAP_LINEAR;
   GLenum max_filter = GL_LINEAR;
