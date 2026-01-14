@@ -1,0 +1,1 @@
+-I"D:/geo_lab/final/-SSAO-/src/06-ssao" -I"D:/geo_lab/final/-SSAO-/third_party/glew/include" -I"D:/geo_lab/final/-SSAO-/third_party/imgui" -I"D:/geo_lab/final/-SSAO-/third_party/glfw/include" -I"D:/geo_lab/final/-SSAO-/third_party/imgui/.." -I"D:/geo_lab/final/-SSAO-/third_party/tinygltf/include" -I"D:/geo_lab/final/-SSAO-/third_party/glm/glm/.."

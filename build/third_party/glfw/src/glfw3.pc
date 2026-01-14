@@ -1,7 +1,7 @@
-prefix=C:/Program Files (x86)/ogl-intro
+prefix=C:/Program Files (x86)/ssao
 exec_prefix=${prefix}
-includedir=C:/Program Files (x86)/ogl-intro/include
-libdir=C:/Program Files (x86)/ogl-intro/lib
+includedir=C:/Program Files (x86)/ssao/include
+libdir=C:/Program Files (x86)/ssao/lib
 
 Name: GLFW
 Description: A multi-platform library for OpenGL, window and input

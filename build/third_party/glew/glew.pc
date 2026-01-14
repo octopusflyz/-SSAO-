@@ -1,6 +1,6 @@
-prefix=C:/Program Files (x86)/ogl-intro
+prefix=C:/Program Files (x86)/ssao
 exec_prefix=${prefix}
-libdir=C:/Program Files (x86)/ogl-intro/lib
+libdir=C:/Program Files (x86)/ssao/lib
 includedir=${prefix}/include
 
 Name: glew

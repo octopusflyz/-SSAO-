@@ -1,0 +1,2 @@
+D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\ar.exe qc libimgui.a CMakeFiles/imgui.dir/imgui_demo.cpp.obj CMakeFiles/imgui.dir/imgui_draw.cpp.obj CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.obj CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.obj CMakeFiles/imgui.dir/imgui_tables.cpp.obj CMakeFiles/imgui.dir/imgui_widgets.cpp.obj CMakeFiles/imgui.dir/imgui.cpp.obj
+D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\ranlib.exe libimgui.a

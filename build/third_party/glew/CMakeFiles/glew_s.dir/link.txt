@@ -1,0 +1,2 @@
+D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\ar.exe qc ..\..\lib\libglew32d.a CMakeFiles/glew_s.dir/src/glew.c.obj CMakeFiles/glew_s.dir/build/glew.rc.obj
+D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\ranlib.exe ..\..\lib\libglew32d.a

@@ -1,0 +1,176 @@
+[
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glew",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DGLEW_BUILD -DGLEW_NO_GLU -Dglew_EXPORTS @CMakeFiles/glew.dir/includes_C.rsp -g -fno-builtin -fno-stack-protector -o CMakeFiles\\glew.dir\\src\\glew.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glew\\src\\glew.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glew/src/glew.c",
+  "output": "third_party/glew/CMakeFiles/glew.dir/src/glew.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glew",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DGLEW_NO_GLU -DGLEW_STATIC @CMakeFiles/glew_s.dir/includes_C.rsp -g -fno-builtin -fno-stack-protector -o CMakeFiles\\glew_s.dir\\src\\glew.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glew\\src\\glew.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glew/src/glew.c",
+  "output": "third_party/glew/CMakeFiles/glew_s.dir/src/glew.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\context.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\context.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/context.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\init.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\init.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/init.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/init.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\input.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\input.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/input.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/input.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\monitor.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\monitor.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/monitor.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\vulkan.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\vulkan.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/vulkan.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\window.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\window.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/window.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/window.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\win32_init.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\win32_init.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/win32_init.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\win32_joystick.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\win32_joystick.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/win32_joystick.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\win32_monitor.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\win32_monitor.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/win32_monitor.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\win32_time.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\win32_time.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/win32_time.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\win32_thread.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\win32_thread.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/win32_thread.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\win32_window.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\win32_window.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/win32_window.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\wgl_context.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\wgl_context.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/wgl_context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\egl_context.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\egl_context.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/egl_context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/glfw/src",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DUNICODE -DWINVER=0x0501 -D_GLFW_USE_CONFIG_H -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=gnu99 -Wall -Wdeclaration-after-statement -o CMakeFiles\\glfw.dir\\osmesa_context.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\glfw\\src\\osmesa_context.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/glfw/src/osmesa_context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/tinygltf",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe  @CMakeFiles/tinygltf.dir/includes_CXX.rsp -g -o CMakeFiles\\tinygltf.dir\\tiny_gltf_impl.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\tinygltf\\tiny_gltf_impl.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/tinygltf/tiny_gltf_impl.cpp",
+  "output": "third_party/tinygltf/CMakeFiles/tinygltf.dir/tiny_gltf_impl.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/imgui",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/imgui.dir/includes_CXX.rsp -g -o CMakeFiles\\imgui.dir\\imgui_demo.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\imgui\\imgui_demo.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/imgui/imgui_demo.cpp",
+  "output": "third_party/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/imgui",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/imgui.dir/includes_CXX.rsp -g -o CMakeFiles\\imgui.dir\\imgui_draw.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\imgui\\imgui_draw.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/imgui/imgui_draw.cpp",
+  "output": "third_party/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/imgui",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/imgui.dir/includes_CXX.rsp -g -o CMakeFiles\\imgui.dir\\imgui_impl_glfw.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\imgui\\imgui_impl_glfw.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/imgui/imgui_impl_glfw.cpp",
+  "output": "third_party/imgui/CMakeFiles/imgui.dir/imgui_impl_glfw.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/imgui",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/imgui.dir/includes_CXX.rsp -g -o CMakeFiles\\imgui.dir\\imgui_impl_opengl3.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\imgui\\imgui_impl_opengl3.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/imgui/imgui_impl_opengl3.cpp",
+  "output": "third_party/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/imgui",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/imgui.dir/includes_CXX.rsp -g -o CMakeFiles\\imgui.dir\\imgui_tables.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\imgui\\imgui_tables.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/imgui/imgui_tables.cpp",
+  "output": "third_party/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/imgui",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/imgui.dir/includes_CXX.rsp -g -o CMakeFiles\\imgui.dir\\imgui_widgets.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\imgui\\imgui_widgets.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/imgui/imgui_widgets.cpp",
+  "output": "third_party/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/imgui",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/imgui.dir/includes_CXX.rsp -g -o CMakeFiles\\imgui.dir\\imgui.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\imgui\\imgui.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/imgui/imgui.cpp",
+  "output": "third_party/imgui/CMakeFiles/imgui.dir/imgui.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC -DSHADER_SOURCE_DIR=\\\"D:/geo_lab/final/-SSAO-/src/06-ssao/shaders\\\" @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\main.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\main.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/main.cpp",
+  "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/main.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC -DSHADER_SOURCE_DIR=\\\"D:/geo_lab/final/-SSAO-/src/06-ssao/shaders\\\" @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\shader.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\shader.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/shader.cpp",
+  "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/shader.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC -DSHADER_SOURCE_DIR=\\\"D:/geo_lab/final/-SSAO-/src/06-ssao/shaders\\\" @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\renderer.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\renderer.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/renderer.cpp",
+  "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/renderer.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC -DSHADER_SOURCE_DIR=\\\"D:/geo_lab/final/-SSAO-/src/06-ssao/shaders\\\" @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\model_loader.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\model_loader.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/model_loader.cpp",
+  "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/model_loader.cpp.obj"
+}
+]

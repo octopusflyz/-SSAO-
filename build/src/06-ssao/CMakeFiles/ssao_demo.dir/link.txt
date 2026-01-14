@@ -1,0 +1,3 @@
+"D:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\ssao_demo.dir/objects.a
+D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\ar.exe qc CMakeFiles\ssao_demo.dir/objects.a @CMakeFiles\ssao_demo.dir\objects1.rsp
+D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\ssao_demo.dir/objects.a -Wl,--no-whole-archive -o ssao_demo.exe -Wl,--out-implib,libssao_demo.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ssao_demo.dir\linkLibs.rsp

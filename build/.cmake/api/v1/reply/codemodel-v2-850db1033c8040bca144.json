@@ -1,0 +1,336 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						10
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "third_party",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						5,
+						7,
+						8,
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party-Debug-a2e0515af5b7021cdaa7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "third_party"
+				},
+				{
+					"build" : "third_party/glew",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.glew-Debug-751ffa9cc78466aba226.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/glew",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "third_party/glfw",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.glfw-Debug-177f8e5839fe5f6eda86.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "third_party/glfw",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "third_party/glfw/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.glfw.src-Debug-743e49f9d3edddc35aa0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 2,
+					"source" : "third_party/glfw/src",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "third_party/glm",
+					"childIndexes" : 
+					[
+						6
+					],
+					"jsonFile" : "directory-third_party.glm-Debug-c6a2a1eb287ba6240828.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "third_party/glm"
+				},
+				{
+					"build" : "third_party/glm/glm",
+					"jsonFile" : "directory-third_party.glm.glm-Debug-89d485164ddb30c4f8eb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 3,
+					"source" : "third_party/glm/glm"
+				},
+				{
+					"build" : "third_party/tinygltf",
+					"jsonFile" : "directory-third_party.tinygltf-Debug-dbca046a51352ff17d7d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "third_party/tinygltf",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "third_party/imgui",
+					"jsonFile" : "directory-third_party.imgui-Debug-73f0d61fb9eb46b5dc32.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "third_party/imgui",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "third_party/microprofile",
+					"jsonFile" : "directory-third_party.microprofile-Debug-5a3bdac93e173614207c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "third_party/microprofile"
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						11
+					],
+					"jsonFile" : "directory-src-Debug-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/06-ssao",
+					"jsonFile" : "directory-src.06-ssao-Debug-77a3ec42a61bf4bd09b6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 4,
+					"source" : "src/06-ssao",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						7,
+						8,
+						9,
+						10
+					],
+					"name" : "ssao",
+					"targetIndexes" : 
+					[
+						3,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "glew",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5,
+						6
+					],
+					"name" : "glm",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						11
+					],
+					"name" : "ssao_demo",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "glew::@2b454ed9ff15f1c897f1",
+					"jsonFile" : "target-glew-Debug-1100bbd671f9cee48ddb.json",
+					"name" : "glew",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glew_s::@2b454ed9ff15f1c897f1",
+					"jsonFile" : "target-glew_s-Debug-1842a39a53aa92620550.json",
+					"name" : "glew_s",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfw::@d5fdcda1ec52eb23cf38",
+					"jsonFile" : "target-glfw-Debug-557adbc9267a11be728d.json",
+					"name" : "glfw",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "imgui::@0bd0160a8608684c225b",
+					"jsonFile" : "target-imgui-Debug-90ad4fca5dea3b679c05.json",
+					"name" : "imgui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "ssao_demo::@4a5c3a2b8f2b325286ac",
+					"jsonFile" : "target-ssao_demo-Debug-a096d5deca04d8d7f887.json",
+					"name" : "ssao_demo",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "tinygltf::@1748ed3dd77f88ae2b36",
+					"jsonFile" : "target-tinygltf-Debug-199b785f2d3cb2cb7b09.json",
+					"name" : "tinygltf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "uninstall::@174ad505b4e557f742c8",
+					"jsonFile" : "target-uninstall-Debug-a191625a081a319073a5.json",
+					"name" : "uninstall",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/geo_lab/final/-SSAO-/build",
+		"source" : "D:/geo_lab/final/-SSAO-"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

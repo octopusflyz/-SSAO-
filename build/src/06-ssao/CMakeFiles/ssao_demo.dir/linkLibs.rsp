@@ -1,0 +1,1 @@
+ ../../third_party/glfw/src/libglfw3.a ../../lib/libglew32d.a ../../third_party/imgui/libimgui.a ../../third_party/tinygltf/libtinygltf.a -lopengl32 ../../third_party/glfw/src/libglfw3.a ../../lib/libglew32d.a -lopengl32 -lglu32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
