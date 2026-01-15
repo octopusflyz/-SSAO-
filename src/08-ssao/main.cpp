@@ -13,6 +13,13 @@
 #include <tiny_gltf.h>
 #include <vector>
 
+struct FireballEffect {
+  glm::vec3 position;
+  glm::vec3 velocity;
+  float lifetime; // seconds
+  float maxLifetime = 5.0f; // 5 seconds lifetime
+};
+
 class SSAOApp final : public Application {
 public:
   SSAOApp() : Application("SSAO Tutorial", 800, 600) {}
@@ -28,6 +35,31 @@ private:
     if (key == GLFW_KEY_M && action == GLFW_PRESS) {
       _mouseLookEnabled = !_mouseLookEnabled;
       _firstMouse = true; // avoid sudden jump when re-enabled
+    }
+
+    // Toggle magic ring with 1 key (both main keyboard and numpad)
+    if ((key == GLFW_KEY_1 || key == GLFW_KEY_KP_1) && action == GLFW_PRESS) {
+      _showMagicRing = !_showMagicRing;
+      printf("Magic ring toggled: %s\n", _showMagicRing ? "ON" : "OFF");
+    }
+
+    // Launch fireball with 2 key
+    if ((key == GLFW_KEY_2 || key == GLFW_KEY_KP_2) && action == GLFW_PRESS) {
+      // Calculate launch direction based on camera view
+      glm::vec3 launchDirection;
+      launchDirection.x = cos(_cameraPitch) * sin(_cameraYaw);
+      launchDirection.y = sin(_cameraPitch);
+      launchDirection.z = cos(_cameraPitch) * cos(_cameraYaw);
+      launchDirection = glm::normalize(launchDirection);
+
+      // Create fireball effect at player's eye position
+      FireballEffect fireball;
+      fireball.position = _playerPosition + glm::vec3(0.0f, 1.5f, 0.0f); // eye level
+      fireball.velocity = launchDirection * 15.0f; // 15 units per second speed
+      fireball.lifetime = 0.0f;
+
+      _fireballEffects.push_back(fireball);
+      printf("Fireball launched! Total effects: %zu\n", _fireballEffects.size());
     }
   }
 
@@ -194,6 +226,14 @@ private:
     _scenes.push_back(std::make_unique<Gltf>(
         "models/elaina_-_the_witchs_journey/scene.gltf"));
 
+    // 添加魔法阵模型
+    _scenes.push_back(std::make_unique<Gltf>(
+        "models/magic_ring_-_red/scene.gltf"));
+
+    // 添加火球模型
+    _scenes.push_back(std::make_unique<Gltf>(
+        "models/fireball/scene.gltf"));
+
     // Print scene info for debugging
     std::cout << "Loaded " << _scenes.size() << " scenes" << std::endl;
     for (size_t i = 0; i < _scenes.size(); ++i) {
@@ -250,6 +290,16 @@ private:
 
   void draw_ui() {
     ImGui::Text("SSAO Tutorial - Third Person");
+    ImGui::Separator();
+
+    // 显示加载的模型数量
+    ImGui::Text("Loaded Models: %d", (int)_scenes.size());
+    if (_scenes.size() >= 4) {
+      ImGui::Text("1. Church Interior Scene");
+      ImGui::Text("2. Character (Elaina)");
+      ImGui::Text("3. Magic Circle (Red) - Ground Effect");
+      ImGui::Text("4. Fireball - Front Effect");
+    }
     ImGui::Separator();
 
     // Camera Controls
@@ -355,20 +405,141 @@ private:
           // Position elaina at player position (character is the player)
           glm::mat4 characterTranslate =
               glm::translate(glm::identity<glm::mat4>(),
-                             _playerPosition + glm::vec3(0.0f, 0.0f, 0.0f));
+                           _playerPosition + glm::vec3(0.0f, 0.0f, 0.0f));
           sceneTransform = characterTranslate * characterRotateY *
                            characterRotate * characterAnim * characterScale *
                            draw.transform;
+        }
+
+        // 添加魔法阵渲染逻辑（按1键切换显示）
+        if (sceneIdx == 2) { // magic_ring is the third model
+          if (_showMagicRing) {
+            // 显示魔法阵：应用特殊变换
+            // 缩小魔法阵到合适大小
+            glm::mat4 ringScale = glm::scale(glm::identity<glm::mat4>(),
+                                            glm::vec3(0.5f, 0.5f, 0.5f));
+
+            // 旋转魔法阵使其水平放置在地面上
+            glm::mat4 ringRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                              glm::radians(90.0f),
+                                              glm::vec3(0.0f, 1.0f, 0.0f));
+
+            // 添加旋转动画效果（围绕Y轴缓慢旋转）
+            static float ringRotationAngle = 0.0f;
+            ringRotationAngle += 0.01f; // 每帧增加一点旋转
+            if (ringRotationAngle > 360.0f) ringRotationAngle -= 360.0f;
+
+            glm::mat4 ringAnimRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                                  ringRotationAngle,
+                                                  glm::vec3(0.0f, 1.0f, 0.0f));
+
+            // 添加上下浮动动画
+            float floatOffset = sin(ringRotationAngle * 2.0f) * 0.05f; // 轻微浮动
+
+            // 将魔法阵放置在角色脚下（稍微下沉到地面以下一点）
+            glm::vec3 ringPosition = _playerPosition;
+            ringPosition.y = _playerPosition.y - 0.8f + floatOffset; // 相对于玩家位置，稍微下沉 + 浮动
+
+            glm::mat4 ringTranslate = glm::translate(glm::identity<glm::mat4>(),
+                                                    ringPosition);
+
+            // 组合所有变换：位置 -> 动画旋转 -> 水平旋转 -> 缩放 -> 原始变换
+            sceneTransform = ringTranslate * ringAnimRotate * ringRotate *
+                           ringScale * draw.transform;
+          } else {
+            // 不显示魔法阵：跳过渲染
+            continue;
+          }
+        }
+
+        // 添加火球渲染逻辑
+        if (sceneIdx == 3) { // fireball is the fourth model
+          // 如果没有活跃的火球效果，不渲染fireball模型
+          if (_fireballEffects.empty()) {
+            continue;
+          }
+
+          // 为每个活跃的火球效果渲染
+          for (const auto& fireball : _fireballEffects) {
+            // 缩小火球到合适大小
+            glm::mat4 fireballScale = glm::scale(glm::identity<glm::mat4>(),
+                                                glm::vec3(0.3f, 0.3f, 0.3f));
+
+            // 添加旋转动画（基于生命周期）
+            float fireballRotationAngle = fireball.lifetime * 2.0f; // 旋转速度与时间相关
+
+            glm::mat4 fireballRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                                  fireballRotationAngle,
+                                                  glm::vec3(0.0f, 1.0f, 0.0f));
+
+            glm::mat4 fireballTranslate = glm::translate(glm::identity<glm::mat4>(),
+                                                        fireball.position);
+
+            // 组合变换：位置 -> 旋转 -> 缩放 -> 原始变换
+            sceneTransform = fireballTranslate * fireballRotate * fireballScale * draw.transform;
+
+            // 渲染这个火球
+            _geometryMaterial->gWVP = _projection * _view * sceneTransform;
+            _geometryMaterial->gWV = _view * sceneTransform;
+            _geometryMaterial->use();
+
+            // Set material textures and render state
+            int materialIndex = scene->meshes[draw.index][0].material;
+            if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+              auto &mat = *scene->materials[materialIndex];
+
+              // 保存当前OpenGL状态
+              GLboolean blendEnabled;
+              GLboolean depthTestEnabled;
+              glGetBooleanv(GL_BLEND, &blendEnabled);
+              glGetBooleanv(GL_DEPTH_TEST, &depthTestEnabled);
+
+              // Set render state based on material mode
+              if (mat.mode == Gltf::Material::Blend) {
+                glEnable(GL_BLEND);
+                glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+                glDisable(GL_DEPTH_TEST);
+              } else {
+                glDisable(GL_BLEND);
+                glEnable(GL_DEPTH_TEST);
+              }
+
+              _geometryMaterial->setMaterialTextures(scene.get(), mat);
+
+              // Render the mesh
+              for (auto &prim : scene->meshes[draw.index]) {
+                prim.mesh->draw();
+              }
+
+              // 恢复OpenGL状态
+              if (blendEnabled) glEnable(GL_BLEND); else glDisable(GL_BLEND);
+              if (depthTestEnabled) glEnable(GL_DEPTH_TEST); else glDisable(GL_DEPTH_TEST);
+            }
+          }
+
+          // 跳过fireball模型的正常渲染，因为我们已经在上面渲染了所有fireball实例
+          continue;
         }
 
         _geometryMaterial->gWVP = _projection * _view * sceneTransform;
         _geometryMaterial->gWV = _view * sceneTransform;
         _geometryMaterial->use();
 
-        // Set material textures
+        // Set material textures and render state
         int materialIndex = scene->meshes[draw.index][0].material;
         if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
           auto &mat = *scene->materials[materialIndex];
+
+          // Set render state based on material mode
+          if (mat.mode == Gltf::Material::Blend) {
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            glDisable(GL_DEPTH_TEST);
+          } else {
+            glDisable(GL_BLEND);
+            glEnable(GL_DEPTH_TEST);
+          }
+
           _geometryMaterial->setMaterialTextures(scene.get(), mat);
         } else {
           // Use default white texture if no material
@@ -502,10 +673,136 @@ private:
           // Position elaina at player position (character is the player)
           glm::mat4 characterTranslate =
               glm::translate(glm::identity<glm::mat4>(),
-                             _playerPosition + glm::vec3(0.0f, 0.0f, 0.0f));
+                           _playerPosition + glm::vec3(0.0f, 0.0f, 0.0f));
           sceneTransform = characterTranslate * characterRotateY *
                            characterRotate * characterAnim * characterScale *
                            draw.transform;
+        }
+
+        // 添加魔法阵渲染逻辑（与GeometryPass完全相同）
+        if (sceneIdx == 2) { // magic_ring is the third model
+          if (_showMagicRing) {
+            // 显示魔法阵：应用特殊变换
+            // 缩小魔法阵到合适大小
+            glm::mat4 ringScale = glm::scale(glm::identity<glm::mat4>(),
+                                            glm::vec3(0.5f, 0.5f, 0.5f));
+
+            // 旋转魔法阵使其水平放置在地面上
+            glm::mat4 ringRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                              glm::radians(90.0f),
+                                              glm::vec3(0.0f, 1.0f, 0.0f));
+
+            // 添加旋转动画效果（围绕Y轴缓慢旋转）
+            static float ringRotationAngle = 0.0f;
+            ringRotationAngle += 0.01f; // 每帧增加一点旋转
+            if (ringRotationAngle > 360.0f) ringRotationAngle -= 360.0f;
+
+            glm::mat4 ringAnimRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                                  ringRotationAngle,
+                                                  glm::vec3(0.0f, 1.0f, 0.0f));
+
+            // 添加上下浮动动画
+            float floatOffset = sin(ringRotationAngle * 2.0f) * 0.05f; // 轻微浮动
+
+            // 将魔法阵放置在角色脚下（稍微下沉到地面以下一点）
+            glm::vec3 ringPosition = _playerPosition;
+            ringPosition.y = _playerPosition.y - 0.8f + floatOffset; // 相对于玩家位置，稍微下沉 + 浮动
+
+            glm::mat4 ringTranslate = glm::translate(glm::identity<glm::mat4>(),
+                                                    ringPosition);
+
+            // 组合所有变换：位置 -> 动画旋转 -> 水平旋转 -> 缩放 -> 原始变换
+            sceneTransform = ringTranslate * ringAnimRotate * ringRotate *
+                           ringScale * draw.transform;
+          } else {
+            // 不显示魔法阵：跳过渲染
+            continue;
+          }
+        }
+
+        // 添加火球渲染逻辑
+        if (sceneIdx == 3) { // fireball is the fourth model
+          // 如果没有活跃的火球效果，跳过渲染
+          if (_fireballEffects.empty()) {
+            continue;
+          }
+
+          // 为每个活跃的火球效果渲染
+          for (const auto& fireball : _fireballEffects) {
+            // 缩小火球到合适大小
+            glm::mat4 fireballScale = glm::scale(glm::identity<glm::mat4>(),
+                                                glm::vec3(0.3f, 0.3f, 0.3f));
+
+            // 添加旋转动画（基于生命周期）
+            float fireballRotationAngle = fireball.lifetime * 2.0f; // 旋转速度与时间相关
+
+            glm::mat4 fireballRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                                  fireballRotationAngle,
+                                                  glm::vec3(0.0f, 1.0f, 0.0f));
+
+            glm::mat4 fireballTranslate = glm::translate(glm::identity<glm::mat4>(),
+                                                        fireball.position);
+
+            // 组合变换：位置 -> 旋转 -> 缩放 -> 原始变换
+            sceneTransform = fireballTranslate * fireballRotate * fireballScale * draw.transform;
+
+            // 渲染这个火球
+            _lightingMaterial->gWVP = _projection * _view * sceneTransform;
+            _lightingMaterial->gWV = _view * sceneTransform;
+            _lightingMaterial->gWorld = sceneTransform;
+            _lightingMaterial->use();
+
+            // Set material textures
+            int materialIndex = scene->meshes[draw.index][0].material;
+            if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+              auto &mat = *scene->materials[materialIndex];
+
+              // 保存当前OpenGL状态
+              GLboolean blendEnabled;
+              GLboolean depthTestEnabled;
+              glGetBooleanv(GL_BLEND, &blendEnabled);
+              glGetBooleanv(GL_DEPTH_TEST, &depthTestEnabled);
+
+              _lightingMaterial->setMaterialTextures(scene.get(), mat);
+
+              // Render the mesh
+              for (auto &prim : scene->meshes[draw.index]) {
+                prim.mesh->draw();
+              }
+
+              // 恢复OpenGL状态
+              if (blendEnabled) glEnable(GL_BLEND); else glDisable(GL_BLEND);
+              if (depthTestEnabled) glEnable(GL_DEPTH_TEST); else glDisable(GL_DEPTH_TEST);
+            } else {
+              // Use default white texture if no material
+              glActiveTexture(GL_TEXTURE4);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(glGetUniformLocation(
+                              _lightingMaterial->getProgram()->get(), "gBaseColor"),
+                          4);
+              glActiveTexture(GL_TEXTURE5);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 1]->get());
+              glUniform1i(glGetUniformLocation(
+                              _lightingMaterial->getProgram()->get(), "gNormal"),
+                          5);
+              glActiveTexture(GL_TEXTURE6);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 1]->get());
+              glUniform1i(glGetUniformLocation(
+                              _lightingMaterial->getProgram()->get(), "gOcclusion"),
+                          6);
+
+              // Render the mesh
+              for (auto &prim : scene->meshes[draw.index]) {
+                prim.mesh->draw();
+              }
+            }
+          }
+
+          // 跳过正常的渲染循环，因为我们已经在上面渲染了所有火球
+          continue;
         }
 
         _lightingMaterial->gWVP = _projection * _view * sceneTransform;
@@ -517,6 +814,7 @@ private:
         int materialIndex = scene->meshes[draw.index][0].material;
         if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
           auto &mat = *scene->materials[materialIndex];
+
           _lightingMaterial->setMaterialTextures(scene.get(), mat);
         } else {
           // Use default white texture if no material
@@ -730,6 +1028,21 @@ private:
 
   void update() override {
     update_frame_buffer();
+
+    // Update fireball effects
+    float deltaTime = 1.0f / 60.0f; // Assume 60 FPS for simplicity
+    for (auto it = _fireballEffects.begin(); it != _fireballEffects.end();) {
+      it->position += it->velocity * deltaTime;
+      it->lifetime += deltaTime;
+
+      // Remove fireball if lifetime exceeded
+      if (it->lifetime >= it->maxLifetime) {
+        it = _fireballEffects.erase(it);
+      } else {
+        ++it;
+      }
+    }
+
     draw_ui();
     draw();
   }
@@ -783,6 +1096,12 @@ private:
   bool _isMoving = false;
   bool _isMovingVertical = false;
   glm::vec3 _lastPosition{0.0f, 0.0f, 0.0f};
+
+  // Magic ring control
+  bool _showMagicRing = false;
+
+  // Fireball effects
+  std::vector<FireballEffect> _fireballEffects;
 
   // Mouse interaction
   double _lastMouseX = 0.0;

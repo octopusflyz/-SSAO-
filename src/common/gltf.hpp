@@ -57,4 +57,6 @@ private:
 
   uint32_t _white_tex_index;
   uint32_t _default_normal_tex_index;
+
+  fs::path _model_name;  // 存储模型名称，用于材质转换逻辑
 };
