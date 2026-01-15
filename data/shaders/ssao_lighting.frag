@@ -158,7 +158,7 @@ void main() {
     vec4 gBufferAlbedo = texture(gAlbedoMap, screenUV);
     
     // Skip background pixels
-    if (length(gBufferPos) > 50.0) {
+    if (length(gBufferPos) > 100.0) {
         FragColor = vec4(0.0, 0.0, 0.0, 1.0);
         return;
     }
@@ -193,15 +193,17 @@ void main() {
         pointLighting += calculatePointLight(gPointLights[i], gBufferPos, n_vs, v_vs, brdf);
     }
     
-    // Apply SSAO
+    // Apply SSAO: ambient全受影响，直射/点光部分受影响以增强可见度
     if (gShaderType == 1) {
         float ao = texture(gAOMap, screenUV).r;
         ambient *= ao;
+        directional *= mix(1.0, ao, 0.35);
+        pointLighting *= mix(1.0, ao, 0.35);
     }
     
-    // Apply occlusion texture
+    // Apply occlusion texture: 只影响环境/间接，不压制直接光
     float occlusion = texture(gOcclusion, uv0_vs).r;
-    directional = mix(directional, directional * occlusion, gOcclusionStrength);
+    ambient *= mix(1.0, occlusion, clamp(gOcclusionStrength, 0.0, 1.0));
     
     // Apply emission
     vec3 emission = srgb_to_linear(texture(gEmission, uv0_vs).xyz) * gEmissionFactor;
@@ -209,7 +211,8 @@ void main() {
     vec3 finalColor = directional + ambient + pointLighting + emission;
     
     if (gShaderType == 2) { // Show only AO
-        FragColor = texture(gAOMap, screenUV);
+        float ao_vis = texture(gAOMap, screenUV).r;
+        FragColor = vec4(vec3(ao_vis), 1.0);
     } else {
         FragColor = vec4(finalColor, linearBaseColor.a);
     }

@@ -23,6 +23,12 @@ private:
     if (action == GLFW_PRESS || action == GLFW_RELEASE) {
       _keys[key] = (action == GLFW_PRESS);
     }
+
+    // Toggle mouse-look with M key
+    if (key == GLFW_KEY_M && action == GLFW_PRESS) {
+      _mouseLookEnabled = !_mouseLookEnabled;
+      _firstMouse = true; // avoid sudden jump when re-enabled
+    }
   }
 
   // Mouse interaction
@@ -31,6 +37,13 @@ private:
       _lastMouseX = xpos;
       _lastMouseY = ypos;
       _firstMouse = false;
+    }
+
+    // If mouse-look is disabled, only update last position to avoid jump
+    if (!_mouseLookEnabled) {
+      _lastMouseX = xpos;
+      _lastMouseY = ypos;
+      return;
     }
 
     double deltaX = xpos - _lastMouseX;
@@ -202,8 +215,9 @@ private:
     _blurMaterial = std::make_unique<BlurMaterial>();
     _lightingMaterial = std::make_unique<LightingMaterial>();
 
-    // Increase ambient light intensity for better visibility
-    _lightingMaterial->gLight.AmbientIntensity = 0.4f; // Increased from 0.1f
+    // Brighter default lighting for visibility (keep within UI slider range)
+    _lightingMaterial->gLight.AmbientIntensity = 1.8f;
+    _lightingMaterial->gLight.DiffuseIntensity = 1.3f;
 
     // Create full screen triangle
     std::vector<Mesh::Vertex> vertices = {
@@ -226,8 +240,8 @@ private:
     cameraLight.Position =
         _playerPosition + glm::vec3(0.0f, _playerHeight, 0.0f);
     cameraLight.Color = glm::vec3(1.0f, 0.95f, 0.8f); // Warm white
-    cameraLight.Intensity = 8.0f;
-    cameraLight.Radius = 40.0f;
+    cameraLight.Intensity = 15.0f; // Stronger player-follow light
+    cameraLight.Radius = 60.0f;     // Softer falloff to avoid dark rim
     _lightingMaterial->gPointLights.push_back(cameraLight);
 
     _lightingMaterial->gNumPointLights =
@@ -336,12 +350,15 @@ private:
           glm::mat4 characterRotateY = glm::rotate(glm::identity<glm::mat4>(),
                                                    glm::radians(characterYaw),
                                                    glm::vec3(0.0f, 1.0f, 0.0f));
+          // Keep animation in geometry pass so G-Buffer matches lighting pass
+          glm::mat4 characterAnim = getCharacterAnimationTransform();
           // Position elaina at player position (character is the player)
           glm::mat4 characterTranslate =
               glm::translate(glm::identity<glm::mat4>(),
                              _playerPosition + glm::vec3(0.0f, 0.0f, 0.0f));
           sceneTransform = characterTranslate * characterRotateY *
-                           characterRotate * characterScale * draw.transform;
+                           characterRotate * characterAnim * characterScale *
+                           draw.transform;
         }
 
         _geometryMaterial->gWVP = _projection * _view * sceneTransform;
@@ -575,6 +592,9 @@ private:
   }
 
   void draw() {
+    // sync shader type to lighting material every frame (ensures SSAO on at start)
+    _lightingMaterial->gShaderType = _shaderType;
+
     // Update player position based on keyboard input
     static double lastTime = glfwGetTime();
     double currentTime = glfwGetTime();
@@ -608,7 +628,8 @@ private:
     GeometryPass();
 
     // SSAO Pass - calculate ambient occlusion
-    glBindFramebuffer(GL_FRAMEBUFFER, _aoBuffer->get());
+    // Bind the actual AO framebuffer (previously bound the texture by mistake)
+    glBindFramebuffer(GL_FRAMEBUFFER, _aoFramebuffer->get());
     glClearColor(0.0, 0.0, 0.0, 1.0);
     glViewport(0, 0, _screen_fb_width, _screen_fb_height);
     glDisable(GL_DEPTH_TEST);
@@ -616,7 +637,8 @@ private:
     SSAOPass();
 
     // Blur Pass - blur the AO result
-    glBindFramebuffer(GL_FRAMEBUFFER, _blurBuffer->get());
+    // Bind the blur framebuffer to receive blurred AO output
+    glBindFramebuffer(GL_FRAMEBUFFER, _blurFramebuffer->get());
     glClearColor(0.0, 0.0, 0.0, 1.0);
     glViewport(0, 0, _screen_fb_width, _screen_fb_height);
     glDisable(GL_DEPTH_TEST);
@@ -752,6 +774,7 @@ private:
   float _playerHeight = 1.7f;
   float _moveSpeed = 5.0f;
   float _mouseSensitivity = 0.005f; // Increased mouse sensitivity
+  bool _mouseLookEnabled = true;    // Toggle mouse-driven camera
   bool _firstMouse = true;
   bool _keys[1024] = {false}; // GLFW_KEY_LAST = 1024
 

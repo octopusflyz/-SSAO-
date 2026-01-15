@@ -42,29 +42,42 @@ void GeometryPassMaterial::use() {
 
 void GeometryPassMaterial::setMaterialTextures(Gltf *scene,
                                                const Gltf::Material &mat) {
+    // Helper: fetch texture safely with fallback to default white / flat normal
+    auto getTextureIdSafe = [&](int idx, bool isNormal) {
+        if (idx >= 0 && idx < (int)scene->textures.size()) {
+            return scene->textures[idx]->get();
+        }
+        // Fallback: scene stores default textures at end: size-2 (white), size-1 (flat normal)
+        int whiteIdx = (int)scene->textures.size() - 2;
+        int normalIdx = (int)scene->textures.size() - 1;
+        int fallbackIdx = isNormal ? normalIdx : whiteIdx;
+        fallbackIdx = std::max(0, std::min(fallbackIdx, (int)scene->textures.size() - 1));
+        return scene->textures[fallbackIdx]->get();
+    };
+
   // Bind base color texture
   glActiveTexture(GL_TEXTURE0);
-  glBindTexture(GL_TEXTURE_2D, scene->textures[mat.base_color]->get());
+    glBindTexture(GL_TEXTURE_2D, getTextureIdSafe(mat.base_color, false));
   glUniform1i(_gBaseColorLocation, 0);
 
   // Bind normal texture
   glActiveTexture(GL_TEXTURE1);
-  glBindTexture(GL_TEXTURE_2D, scene->textures[mat.normal]->get());
+    glBindTexture(GL_TEXTURE_2D, getTextureIdSafe(mat.normal, true));
   glUniform1i(_gNormalLocation, 1);
 
   // Bind metallic roughness texture
   glActiveTexture(GL_TEXTURE2);
-  glBindTexture(GL_TEXTURE_2D, scene->textures[mat.metallic_roughness]->get());
+    glBindTexture(GL_TEXTURE_2D, getTextureIdSafe(mat.metallic_roughness, false));
   glUniform1i(_gMetallicRoughnessLocation, 2);
 
   // Bind occlusion texture
   glActiveTexture(GL_TEXTURE3);
-  glBindTexture(GL_TEXTURE_2D, scene->textures[mat.occlusion]->get());
+    glBindTexture(GL_TEXTURE_2D, getTextureIdSafe(mat.occlusion, false));
   glUniform1i(_gOcclusionLocation, 3);
 
   // Bind emission texture
   glActiveTexture(GL_TEXTURE4);
-  glBindTexture(GL_TEXTURE_2D, scene->textures[mat.emission]->get());
+    glBindTexture(GL_TEXTURE_2D, getTextureIdSafe(mat.emission, false));
   glUniform1i(_gEmissionLocation, 4);
 
   // Set material factors
