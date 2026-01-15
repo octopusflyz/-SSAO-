@@ -13,8 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/imgui.dir/imgui_tables.cpp.obj.d"
   "CMakeFiles/imgui.dir/imgui_widgets.cpp.obj"
   "CMakeFiles/imgui.dir/imgui_widgets.cpp.obj.d"
-  "libimgui.a"
-  "libimgui.pdb"
+  "libimguid.a"
+  "libimguid.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -131,12 +131,44 @@ src/06-ssao/CMakeFiles/ssao_demo.dir/model_loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ssao_demo.dir/model_loader.cpp.s"
 	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\geo_lab\final\-SSAO-\src\06-ssao\model_loader.cpp -o CMakeFiles\ssao_demo.dir\model_loader.cpp.s
 
+src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj: src/06-ssao/CMakeFiles/ssao_demo.dir/flags.make
+src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj: src/06-ssao/CMakeFiles/ssao_demo.dir/includes_CXX.rsp
+src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj: D:/geo_lab/final/-SSAO-/src/06-ssao/fbx_model.cpp
+src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj: src/06-ssao/CMakeFiles/ssao_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\geo_lab\final\-SSAO-\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj"
+	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj -MF CMakeFiles\ssao_demo.dir\fbx_model.cpp.obj.d -o CMakeFiles\ssao_demo.dir\fbx_model.cpp.obj -c D:\geo_lab\final\-SSAO-\src\06-ssao\fbx_model.cpp
+
+src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ssao_demo.dir/fbx_model.cpp.i"
+	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\geo_lab\final\-SSAO-\src\06-ssao\fbx_model.cpp > CMakeFiles\ssao_demo.dir\fbx_model.cpp.i
+
+src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ssao_demo.dir/fbx_model.cpp.s"
+	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\geo_lab\final\-SSAO-\src\06-ssao\fbx_model.cpp -o CMakeFiles\ssao_demo.dir\fbx_model.cpp.s
+
+src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj: src/06-ssao/CMakeFiles/ssao_demo.dir/flags.make
+src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj: src/06-ssao/CMakeFiles/ssao_demo.dir/includes_CXX.rsp
+src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj: D:/geo_lab/final/-SSAO-/src/06-ssao/gbuffer.cpp
+src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj: src/06-ssao/CMakeFiles/ssao_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\geo_lab\final\-SSAO-\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj"
+	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj -MF CMakeFiles\ssao_demo.dir\gbuffer.cpp.obj.d -o CMakeFiles\ssao_demo.dir\gbuffer.cpp.obj -c D:\geo_lab\final\-SSAO-\src\06-ssao\gbuffer.cpp
+
+src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ssao_demo.dir/gbuffer.cpp.i"
+	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\geo_lab\final\-SSAO-\src\06-ssao\gbuffer.cpp > CMakeFiles\ssao_demo.dir\gbuffer.cpp.i
+
+src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ssao_demo.dir/gbuffer.cpp.s"
+	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\geo_lab\final\-SSAO-\src\06-ssao\gbuffer.cpp -o CMakeFiles\ssao_demo.dir\gbuffer.cpp.s
+
 # Object files for target ssao_demo
 ssao_demo_OBJECTS = \
 "CMakeFiles/ssao_demo.dir/main.cpp.obj" \
 "CMakeFiles/ssao_demo.dir/shader.cpp.obj" \
 "CMakeFiles/ssao_demo.dir/renderer.cpp.obj" \
-"CMakeFiles/ssao_demo.dir/model_loader.cpp.obj"
+"CMakeFiles/ssao_demo.dir/model_loader.cpp.obj" \
+"CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj" \
+"CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj"
 
 # External object files for target ssao_demo
 ssao_demo_EXTERNAL_OBJECTS =
@@ -145,22 +177,29 @@ src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/main.cpp.obj
 src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/shader.cpp.obj
 src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/renderer.cpp.obj
 src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/model_loader.cpp.obj
+src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj
+src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj
 src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/build.make
-src/06-ssao/ssao_demo.exe: third_party/glfw/src/libglfw3.a
+src/06-ssao/ssao_demo.exe: third_party/glfw/src/libglfw3d.a
 src/06-ssao/ssao_demo.exe: lib/libglew32d.a
-src/06-ssao/ssao_demo.exe: third_party/imgui/libimgui.a
-src/06-ssao/ssao_demo.exe: third_party/tinygltf/libtinygltf.a
-src/06-ssao/ssao_demo.exe: third_party/glfw/src/libglfw3.a
+src/06-ssao/ssao_demo.exe: third_party/imgui/libimguid.a
+src/06-ssao/ssao_demo.exe: third_party/tinygltf/libtinygltfd.a
+src/06-ssao/ssao_demo.exe: third_party/assimp/code/libassimpd.a
+src/06-ssao/ssao_demo.exe: third_party/glfw/src/libglfw3d.a
 src/06-ssao/ssao_demo.exe: lib/libglew32d.a
+src/06-ssao/ssao_demo.exe: third_party/assimp/contrib/zlib/libzlibstaticd.a
+src/06-ssao/ssao_demo.exe: third_party/assimp/contrib/irrXML/libIrrXMLd.a
 src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/linkLibs.rsp
 src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/objects1.rsp
 src/06-ssao/ssao_demo.exe: src/06-ssao/CMakeFiles/ssao_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\geo_lab\final\-SSAO-\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ssao_demo.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\geo_lab\final\-SSAO-\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ssao_demo.exe"
 	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ssao_demo.dir\link.txt --verbose=$(VERBOSE)
 	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && "D:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/geo_lab/final/-SSAO-/build/shaders
 	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && "D:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/geo_lab/final/-SSAO-/build/src/06-ssao/shaders
-	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && "D:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/simple.vert D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/simple.frag D:/geo_lab/final/-SSAO-/build/shaders/
-	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && "D:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/simple.vert D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/simple.frag D:/geo_lab/final/-SSAO-/build/src/06-ssao/shaders/
+	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && "D:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/simple.vert D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/simple.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/gbuffer.vert D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/gbuffer.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/quad.vert D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/debug_display.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/lighting.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/ssao.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/ssao_blur.frag D:/geo_lab/final/-SSAO-/build/shaders/
+	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && "D:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/simple.vert D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/simple.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/gbuffer.vert D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/gbuffer.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/quad.vert D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/debug_display.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/lighting.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/ssao.frag D:/geo_lab/final/-SSAO-/src/06-ssao/shaders/ssao_blur.frag D:/geo_lab/final/-SSAO-/build/src/06-ssao/shaders/
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying assets directory to build directory"
+	cd /d D:\geo_lab\final\-SSAO-\build\src\06-ssao && "D:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/geo_lab/final/-SSAO-/assets D:/geo_lab/final/-SSAO-/build/assets
 
 # Rule to build all files generated by this target.
 src/06-ssao/CMakeFiles/ssao_demo.dir/build: src/06-ssao/ssao_demo.exe

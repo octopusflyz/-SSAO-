@@ -1,2 +1,2 @@
-D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\ar.exe qc libtinygltf.a CMakeFiles/tinygltf.dir/tiny_gltf_impl.cpp.obj
-D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\ranlib.exe libtinygltf.a
+D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\ar.exe qc libtinygltfd.a CMakeFiles/tinygltf.dir/tiny_gltf_impl.cpp.obj
+D:\gytx_x86_64-12.2.0-posix-seh\mingw64\bin\ranlib.exe libtinygltfd.a

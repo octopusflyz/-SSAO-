@@ -894,3 +894,206 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "third_party/assimp/contrib/zlib/CMakeLists.txt:35 (check_include_file)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-o6xbch"
+      binary: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-o6xbch"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -fPIC "
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/geo_lab/final/-SSAO-/third_party/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-o6xbch'
+        
+        Run Build Command(s): "D:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe -f Makefile cmTC_94ea5/fast
+        D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_94ea5.dir\\build.make CMakeFiles/cmTC_94ea5.dir/build
+        mingw32-make.exe[1]: Entering directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-o6xbch'
+        Building C object CMakeFiles/cmTC_94ea5.dir/CheckIncludeFile.c.obj
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe   -fno-strict-aliasing -fPIC   -o CMakeFiles\\cmTC_94ea5.dir\\CheckIncludeFile.c.obj -c D:\\geo_lab\\final\\-SSAO-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o6xbch\\CheckIncludeFile.c
+        Linking C executable cmTC_94ea5.exe
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_94ea5.dir\\link.txt --verbose=1
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_94ea5.dir/objects.a
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_94ea5.dir/objects.a @CMakeFiles\\cmTC_94ea5.dir\\objects1.rsp
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -fno-strict-aliasing -fPIC   -Wl,--whole-archive CMakeFiles\\cmTC_94ea5.dir/objects.a -Wl,--no-whole-archive -o cmTC_94ea5.exe -Wl,--out-implib,libcmTC_94ea5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_94ea5.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-o6xbch'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "third_party/assimp/contrib/zlib/CMakeLists.txt:36 (check_include_file)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-c0609c"
+      binary: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-c0609c"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -fPIC "
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/geo_lab/final/-SSAO-/third_party/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-c0609c'
+        
+        Run Build Command(s): "D:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe -f Makefile cmTC_26f22/fast
+        D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_26f22.dir\\build.make CMakeFiles/cmTC_26f22.dir/build
+        mingw32-make.exe[1]: Entering directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-c0609c'
+        Building C object CMakeFiles/cmTC_26f22.dir/CheckIncludeFile.c.obj
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe   -fno-strict-aliasing -fPIC   -o CMakeFiles\\cmTC_26f22.dir\\CheckIncludeFile.c.obj -c D:\\geo_lab\\final\\-SSAO-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c0609c\\CheckIncludeFile.c
+        Linking C executable cmTC_26f22.exe
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_26f22.dir\\link.txt --verbose=1
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_26f22.dir/objects.a
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_26f22.dir/objects.a @CMakeFiles\\cmTC_26f22.dir\\objects1.rsp
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -fno-strict-aliasing -fPIC   -Wl,--whole-archive CMakeFiles\\cmTC_26f22.dir/objects.a -Wl,--no-whole-archive -o cmTC_26f22.exe -Wl,--out-implib,libcmTC_26f22.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_26f22.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-c0609c'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "third_party/assimp/contrib/zlib/CMakeLists.txt:37 (check_include_file)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-q00a8x"
+      binary: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-q00a8x"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -fPIC "
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/geo_lab/final/-SSAO-/third_party/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-q00a8x'
+        
+        Run Build Command(s): "D:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe -f Makefile cmTC_b5dc1/fast
+        D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b5dc1.dir\\build.make CMakeFiles/cmTC_b5dc1.dir/build
+        mingw32-make.exe[1]: Entering directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-q00a8x'
+        Building C object CMakeFiles/cmTC_b5dc1.dir/CheckIncludeFile.c.obj
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe   -fno-strict-aliasing -fPIC   -o CMakeFiles\\cmTC_b5dc1.dir\\CheckIncludeFile.c.obj -c D:\\geo_lab\\final\\-SSAO-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-q00a8x\\CheckIncludeFile.c
+        Linking C executable cmTC_b5dc1.exe
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_b5dc1.dir\\link.txt --verbose=1
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_b5dc1.dir/objects.a
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_b5dc1.dir/objects.a @CMakeFiles\\cmTC_b5dc1.dir\\objects1.rsp
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -fno-strict-aliasing -fPIC   -Wl,--whole-archive CMakeFiles\\cmTC_b5dc1.dir/objects.a -Wl,--no-whole-archive -o cmTC_b5dc1.exe -Wl,--out-implib,libcmTC_b5dc1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_b5dc1.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-q00a8x'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "D:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "third_party/assimp/contrib/zlib/CMakeLists.txt:55 (check_type_size)"
+    checks:
+      - "Check size of off64_t"
+    directories:
+      source: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-qilmdg"
+      binary: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-qilmdg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -fPIC "
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/geo_lab/final/-SSAO-/third_party/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-qilmdg'
+        
+        Run Build Command(s): "D:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe -f Makefile cmTC_7d4a1/fast
+        D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_7d4a1.dir\\build.make CMakeFiles/cmTC_7d4a1.dir/build
+        mingw32-make.exe[1]: Entering directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-qilmdg'
+        Building C object CMakeFiles/cmTC_7d4a1.dir/OFF64_T.c.obj
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_TYPES_H -D_LARGEFILE64_SOURCE=1  -fno-strict-aliasing -fPIC   -o CMakeFiles\\cmTC_7d4a1.dir\\OFF64_T.c.obj -c D:\\geo_lab\\final\\-SSAO-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qilmdg\\OFF64_T.c
+        Linking C executable cmTC_7d4a1.exe
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_7d4a1.dir\\link.txt --verbose=1
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_7d4a1.dir/objects.a
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_7d4a1.dir/objects.a @CMakeFiles\\cmTC_7d4a1.dir\\objects1.rsp
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -fno-strict-aliasing -fPIC   -Wl,--whole-archive CMakeFiles\\cmTC_7d4a1.dir/objects.a -Wl,--no-whole-archive -o cmTC_7d4a1.exe -Wl,--out-implib,libcmTC_7d4a1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_7d4a1.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-qilmdg'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "third_party/assimp/contrib/zlib/CMakeLists.txt:64 (check_function_exists)"
+    checks:
+      - "Looking for fseeko"
+    directories:
+      source: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-08o2pa"
+      binary: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-08o2pa"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -fPIC "
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/geo_lab/final/-SSAO-/third_party/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_FSEEKO"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-08o2pa'
+        
+        Run Build Command(s): "D:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe -f Makefile cmTC_48b83/fast
+        D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_48b83.dir\\build.make CMakeFiles/cmTC_48b83.dir/build
+        mingw32-make.exe[1]: Entering directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-08o2pa'
+        Building C object CMakeFiles/cmTC_48b83.dir/CheckFunctionExists.c.obj
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe   -fno-strict-aliasing -fPIC  -DCHECK_FUNCTION_EXISTS=fseeko -o CMakeFiles\\cmTC_48b83.dir\\CheckFunctionExists.c.obj -c D:\\geo_lab\\final\\-SSAO-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-08o2pa\\CheckFunctionExists.c
+        Linking C executable cmTC_48b83.exe
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_48b83.dir\\link.txt --verbose=1
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_48b83.dir/objects.a
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_48b83.dir/objects.a @CMakeFiles\\cmTC_48b83.dir\\objects1.rsp
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -fno-strict-aliasing -fPIC  -DCHECK_FUNCTION_EXISTS=fseeko -Wl,--whole-archive CMakeFiles\\cmTC_48b83.dir/objects.a -Wl,--no-whole-archive -o cmTC_48b83.exe -Wl,--out-implib,libcmTC_48b83.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_48b83.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-08o2pa'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "third_party/assimp/contrib/zlib/CMakeLists.txt:72 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-vetaje"
+      binary: "D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-vetaje"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "-fno-strict-aliasing -fPIC "
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "D:/geo_lab/final/-SSAO-/third_party/assimp/cmake-modules"
+    buildResult:
+      variable: "Z_HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-vetaje'
+        
+        Run Build Command(s): "D:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe -f Makefile cmTC_e8b0f/fast
+        D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_e8b0f.dir\\build.make CMakeFiles/cmTC_e8b0f.dir/build
+        mingw32-make.exe[1]: Entering directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-vetaje'
+        Building C object CMakeFiles/cmTC_e8b0f.dir/CheckIncludeFile.c.obj
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe   -fno-strict-aliasing -fPIC   -o CMakeFiles\\cmTC_e8b0f.dir\\CheckIncludeFile.c.obj -c D:\\geo_lab\\final\\-SSAO-\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vetaje\\CheckIncludeFile.c
+        Linking C executable cmTC_e8b0f.exe
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_e8b0f.dir\\link.txt --verbose=1
+        "D:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_e8b0f.dir/objects.a
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\ar.exe qc CMakeFiles\\cmTC_e8b0f.dir/objects.a @CMakeFiles\\cmTC_e8b0f.dir\\objects1.rsp
+        D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -fno-strict-aliasing -fPIC   -Wl,--whole-archive CMakeFiles\\cmTC_e8b0f.dir/objects.a -Wl,--no-whole-archive -o cmTC_e8b0f.exe -Wl,--out-implib,libcmTC_e8b0f.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\\cmTC_e8b0f.dir\\linkLibs.rsp
+        mingw32-make.exe[1]: Leaving directory 'D:/geo_lab/final/-SSAO-/build/CMakeFiles/CMakeScratch/TryCompile-vetaje'
+        
+      exitCode: 0
+...

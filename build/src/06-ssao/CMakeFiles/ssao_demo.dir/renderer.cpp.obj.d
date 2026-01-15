@@ -257,18 +257,9 @@ src/06-ssao/CMakeFiles/ssao_demo.dir/renderer.cpp.obj: \
  D:/geo_lab/final/-SSAO-/third_party/glm/glm/detail/type_half.inl \
  D:/geo_lab/final/-SSAO-/third_party/glm/glm/integer.hpp \
  D:/geo_lab/final/-SSAO-/third_party/glm/glm/detail/func_integer.inl \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/gtc/matrix_transform.hpp \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_projection.hpp \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/gtc/constants.hpp \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/scalar_constants.hpp \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/scalar_constants.inl \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/gtc/constants.inl \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_projection.inl \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_clip_space.hpp \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_clip_space.inl \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_transform.hpp \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_transform.inl \
- D:/geo_lab/final/-SSAO-/third_party/glm/glm/gtc/matrix_transform.inl \
+ D:\geo_lab\final\-SSAO-\src\06-ssao\gbuffer.h \
+ D:\geo_lab\final\-SSAO-\src\06-ssao\model_loader.h \
+ D:\geo_lab\final\-SSAO-\src\06-ssao\fbx_model.h \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/iostream \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/ostream \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/ios \
@@ -313,4 +304,76 @@ src/06-ssao/CMakeFiles/ssao_demo.dir/renderer.cpp.obj: \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/basic_ios.tcc \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/ostream.tcc \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/istream \
- D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/istream.tcc
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/istream.tcc \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/vector \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/stl_uninitialized.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/stl_vector.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/stl_bvector.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/vector.tcc \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/map \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/stl_tree.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/ext/aligned_buffer.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/node_handle.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/stl_map.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/tuple \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/uses_allocator.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/stl_multimap.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/erase_if.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/Importer.hpp \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/types.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/x86_64-w64-mingw32/include/string.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/defs.h \
+ D:/geo_lab/final/-SSAO-/build/third_party/assimp/include/assimp/config.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/vector3.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/vector2.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/color4.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/matrix3x3.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/matrix4x4.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/quaternion.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/cstring \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/vector2.inl \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/vector3.inl \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/color4.inl \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/quaternion.inl \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/matrix3x3.inl \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/algorithm \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/stl_algo.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/algorithmfwd.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/stl_heap.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/stl_tempbuf.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/uniform_int_dist.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/pstl/glue_algorithm_defs.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/pstl/execution_defs.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/matrix4x4.inl \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/MathFunctions.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/scene.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/texture.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/Compiler/pushpack1.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/Compiler/poppack1.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/mesh.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/aabb.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/light.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/camera.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/material.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/material.inl \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/anim.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/metadata.h \
+ D:/geo_lab/final/-SSAO-/third_party/assimp/include/assimp/postprocess.h \
+ D:/geo_lab/final/-SSAO-/third_party/imgui/imgui.h \
+ D:/geo_lab/final/-SSAO-/third_party/imgui/imconfig.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/stdarg.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/gtc/matrix_transform.hpp \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_projection.hpp \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/gtc/constants.hpp \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/scalar_constants.hpp \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/scalar_constants.inl \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/gtc/constants.inl \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_projection.inl \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_clip_space.hpp \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_clip_space.inl \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_transform.hpp \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/ext/matrix_transform.inl \
+ D:/geo_lab/final/-SSAO-/third_party/glm/glm/gtc/matrix_transform.inl

@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj"
+  "CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj.d"
+  "CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj"
+  "CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj.d"
   "CMakeFiles/ssao_demo.dir/main.cpp.obj"
   "CMakeFiles/ssao_demo.dir/main.cpp.obj.d"
   "CMakeFiles/ssao_demo.dir/model_loader.cpp.obj"

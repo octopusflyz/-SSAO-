@@ -94,6 +94,10 @@ src/06-ssao/CMakeFiles/ssao_demo.dir/model_loader.cpp.obj: \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/cerrno \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/charconv.h \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/basic_string.tcc \
+ D:/geo_lab/final/-SSAO-/third_party/glew/include/GL/glew.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/x86_64-w64-mingw32/include/inttypes.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
  D:/geo_lab/final/-SSAO-/third_party/tinygltf/include/tiny_gltf.h \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/array \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/compare \
@@ -188,4 +192,33 @@ src/06-ssao/CMakeFiles/ssao_demo.dir/model_loader.cpp.obj: \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/basic_ios.tcc \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/ostream.tcc \
  D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/istream \
- D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/istream.tcc
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/istream.tcc \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/algorithm \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/pstl/glue_algorithm_defs.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/pstl/execution_defs.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/filesystem \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/fs_fwd.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/chrono.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/ratio \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/ctime \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/parse_numbers.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/fs_path.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/locale \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/locale_facets_nonio.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/codecvt.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/locale_facets_nonio.tcc \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/locale_conv.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/iomanip \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/quoted_string.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/sstream \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/sstream.tcc \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/codecvt \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/ext/concurrence.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/shared_ptr.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/shared_ptr_base.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/allocated_ptr.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/unique_ptr.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/fs_dir.h \
+ D:/gytx_x86_64-12.2.0-posix-seh/mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/bits/fs_ops.h

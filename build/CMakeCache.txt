@@ -14,6 +14,87 @@
 # EXTERNAL cache entries
 ########################
 
+//Android JNI IOSystem support is active
+ASSIMP_ANDROID_JNIIOSYSTEM:BOOL=OFF
+
+//Enable AddressSanitizer.
+ASSIMP_ASAN:BOOL=OFF
+
+//Path the tool executables are installed to.
+ASSIMP_BIN_INSTALL_DIR:STRING=bin
+
+//default value of all ASSIMP_BUILD_XXX_EXPORTER values
+ASSIMP_BUILD_ALL_EXPORTERS_BY_DEFAULT:BOOL=ON
+
+//default value of all ASSIMP_BUILD_XXX_IMPORTER values
+ASSIMP_BUILD_ALL_IMPORTERS_BY_DEFAULT:BOOL=ON
+
+//describe the current architecture.
+ASSIMP_BUILD_ARCHITECTURE:STRING=
+
+//If the supplementary tools for Assimp are built in addition to
+// the library.
+ASSIMP_BUILD_ASSIMP_TOOLS:BOOL=ON
+
+//describe the current compiler.
+ASSIMP_BUILD_COMPILER:STRING=
+
+//Build the C4D importer, which relies on the non-free Melange
+// SDK.
+ASSIMP_BUILD_NONFREE_C4D_IMPORTER:BOOL=OFF
+
+//If the official samples are built as well (needs Glut).
+ASSIMP_BUILD_SAMPLES:BOOL=OFF
+
+//If the test suite for Assimp is built in addition to the library.
+ASSIMP_BUILD_TESTS:BOOL=ON
+
+//Build your own zlib
+ASSIMP_BUILD_ZLIB:BOOL=OFF
+
+//Enable this to measure test coverage.
+ASSIMP_COVERALLS:BOOL=OFF
+
+//Set to ON to enable double precision processing
+ASSIMP_DOUBLE_PRECISION:BOOL=OFF
+
+//Path the header files are installed to.
+ASSIMP_INCLUDE_INSTALL_DIR:STRING=include
+
+//Suffix to append to library names
+ASSIMP_LIBRARY_SUFFIX:STRING=
+
+//Path the built library files are installed to.
+ASSIMP_LIB_INSTALL_DIR:STRING=lib
+
+//Set to ON to generate CPack configuration files and packaging
+// targets
+ASSIMP_OPT_BUILD_PACKAGES:BOOL=OFF
+
+//the package-specific version used for uploading the sources
+ASSIMP_PACKAGE_VERSION:STRING=0
+
+//Enable Undefined Behavior sanitizer.
+ASSIMP_UBSAN:BOOL=OFF
+
+//Treat warnings as errors.
+ASSIMP_WERROR:BOOL=OFF
+
+//Value Computed by CMake
+Assimp_BINARY_DIR:STATIC=D:/geo_lab/final/-SSAO-/build/third_party/assimp
+
+//Value Computed by CMake
+Assimp_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Assimp_SOURCE_DIR:STATIC=D:/geo_lab/final/-SSAO-/third_party/assimp
+
+//Build documentation using Doxygen.
+BUILD_DOCS:BOOL=OFF
+
+//Build package as Mac OS X Framework bundle.
+BUILD_FRAMEWORK:BOOL=OFF
+
 //Build shared libraries
 BUILD_SHARED_LIBS:BOOL=OFF
 
@@ -22,6 +103,10 @@ CMAKE_ADDR2LINE:FILEPATH=D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/addr2line.e
 
 //Path to a program.
 CMAKE_AR:FILEPATH=D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/ar.exe
+
+//For backwards compatibility, what version of CMake commands and
+// syntax should this version of CMake try to support.
+CMAKE_BACKWARDS_COMPATIBILITY:STRING=2.4
 
 //No help, variable specified on the command line.
 CMAKE_BUILD_TYPE:STRING=Debug
@@ -86,6 +171,9 @@ CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Libraries linked by default with all C applications.
 CMAKE_C_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+
+//Debug Postfix for lib, samples and tools
+CMAKE_DEBUG_POSTFIX:STRING=d
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=D:/gytx_x86_64-12.2.0-posix-seh/mingw64/bin/dlltool.exe
@@ -307,6 +395,30 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a library.
+DirectX_D3DCOMPILER_LIBRARY:FILEPATH=DirectX_D3DCOMPILER_LIBRARY-NOTFOUND
+
+//Path to a library.
+DirectX_D3DX9_LIBRARY:FILEPATH=DirectX_D3DX9_LIBRARY-NOTFOUND
+
+//Path to a library.
+DirectX_DXERR_LIBRARY:FILEPATH=DirectX_DXERR_LIBRARY-NOTFOUND
+
+//Path to a library.
+DirectX_DXGI_LIBRARY:FILEPATH=DirectX_DXGI_LIBRARY-NOTFOUND
+
+//Path to a library.
+DirectX_DXGUID_LIBRARY:FILEPATH=DirectX_DXGUID_LIBRARY-NOTFOUND
+
+//x
+DirectX_INCLUDE_DIR:STRING=DirectX_INCLUDE_DIR-NOTFOUND
+
+//x
+DirectX_LIBRARY:STRING=DirectX_LIBRARY-NOTFOUND
+
+//Single output directory for building all executables.
+EXECUTABLE_OUTPUT_PATH:PATH=
+
 //OSMesa mode
 GLEW_OSMESA:BOOL=OFF
 
@@ -331,11 +443,56 @@ GLFW_USE_HYBRID_HPG:BOOL=OFF
 //Assume the Vulkan loader is linked with the application
 GLFW_VULKAN_STATIC:BOOL=OFF
 
+//Enable Hunter package manager support
+HUNTER_ENABLED:BOOL=OFF
+
+//Print a lot info
+HUNTER_STATUS_DEBUG:BOOL=OFF
+
+//Print working status
+HUNTER_STATUS_PRINT:BOOL=ON
+
+//Enable/disable TLS certificate checking on downloads
+HUNTER_TLS_VERIFY:BOOL=ON
+
+//Don't call git to get the hash.
+IGNORE_GIT_HASH:BOOL=OFF
+
+//Inject debug postfix in .a/.so/.dll lib names
+INJECT_DEBUG_POSTFIX:BOOL=ON
+
+//Single output directory for building all libraries.
+LIBRARY_OUTPUT_PATH:PATH=
+
 //OpenGL library for win32
 OPENGL_gl_LIBRARY:STRING=opengl32
 
 //GLU library for win32
 OPENGL_glu_LIBRARY:STRING=glu32
+
+//Arguments to supply to pkg-config
+PKG_CONFIG_ARGN:STRING=
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=PKG_CONFIG_EXECUTABLE-NOTFOUND
+
+//Path to a library.
+RT_LIBRARY:FILEPATH=RT_LIBRARY-NOTFOUND
+
+//Use system installed Irrlicht/IrrXML library.
+SYSTEM_IRRXML:BOOL=OFF
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=ZLIB_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_DBG:FILEPATH=ZLIB_LIBRARY_DBG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_REL:FILEPATH=ZLIB_LIBRARY_REL-NOTFOUND
+
+//Dependencies for the target
+assimp_LIB_DEPENDS:STATIC=general;zlibstatic;general;IrrXML;
 
 //Value Computed by CMake
 glew_BINARY_DIR:STATIC=D:/geo_lab/final/-SSAO-/build/third_party/glew
@@ -379,11 +536,28 @@ ssao_demo_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 ssao_demo_SOURCE_DIR:STATIC=D:/geo_lab/final/-SSAO-/src/06-ssao
 
+//Value Computed by CMake
+zlib_BINARY_DIR:STATIC=D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib
+
+//Value Computed by CMake
+zlib_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+zlib_SOURCE_DIR:STATIC=D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib
+
 
 ########################
 # INTERNAL cache entries
 ########################
 
+//Enable building amd64 assembly implementation
+AMD64:INTERNAL=FALSE
+//Enable building i686 assembly implementation
+ASM686:INTERNAL=FALSE
+//ADVANCED property for variable: ASSIMP_BUILD_ARCHITECTURE
+ASSIMP_BUILD_ARCHITECTURE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ASSIMP_BUILD_COMPILER
+ASSIMP_BUILD_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -520,7 +694,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=17
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -578,16 +752,64 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Have include dinput.h
 DINPUT_H_FOUND:INTERNAL=1
+//ADVANCED property for variable: DirectX_D3DCOMPILER_LIBRARY
+DirectX_D3DCOMPILER_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DirectX_D3DX9_LIBRARY
+DirectX_D3DX9_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DirectX_DXERR_LIBRARY
+DirectX_DXERR_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DirectX_DXGI_LIBRARY
+DirectX_DXGI_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DirectX_DXGUID_LIBRARY
+DirectX_DXGUID_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DirectX_INCLUDE_DIR
+DirectX_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DirectX_LIBRARY
+DirectX_LIBRARY-ADVANCED:INTERNAL=1
+//x
+DirectX_PREFIX_PATH_INT_CHECK:INTERNAL=C:/apps_x86/Microsoft DirectX SDK*;C:/Program Files (x86)/Microsoft DirectX SDK*;C:/apps/Microsoft DirectX SDK*;C:/Program Files/Microsoft DirectX SDK*;C:/Program Files (x86)/Windows Kits/8.1;C:\Program Files/Microsoft DirectX SDK*
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[opengl32][c ][v()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Have function fseeko
+HAVE_FSEEKO:INTERNAL=1
+//Result of TRY_COMPILE
+HAVE_OFF64_T:INTERNAL=TRUE
+//Have include stddef.h
+HAVE_STDDEF_H:INTERNAL=1
+//Have include stdint.h
+HAVE_STDINT_H:INTERNAL=1
+//Have include sys/types.h
+HAVE_SYS_TYPES_H:INTERNAL=1
+//IrrXML_Include
+IRRXML_INCLUDE_DIR:INTERNAL=D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/irrXML
+//IrrXML
+IRRXML_LIBRARY:INTERNAL=IrrXML
+//CHECK_TYPE_SIZE: sizeof(off64_t)
+OFF64_T:INTERNAL=8
 //ADVANCED property for variable: OPENGL_gl_LIBRARY
 OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_glu_LIBRARY
 OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_ARGN
+PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: RT_LIBRARY
+RT_LIBRARY-ADVANCED:INTERNAL=1
 //Have include xinput.h
 XINPUT_H_FOUND:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DBG
+ZLIB_LIBRARY_DBG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_REL
+ZLIB_LIBRARY_REL-ADVANCED:INTERNAL=1
+//x
+ZLIB_PREFIX_PATH_INT_CHECK:INTERNAL=
+//Have include unistd.h
+Z_HAVE_UNISTD_H:INTERNAL=1
 //Test _GLFW_HAS_64ASLR
 _GLFW_HAS_64ASLR:INTERNAL=1
 //Test _GLFW_HAS_ASLR

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tinygltf.dir/tiny_gltf_impl.cpp.obj"
   "CMakeFiles/tinygltf.dir/tiny_gltf_impl.cpp.obj.d"
-  "libtinygltf.a"
-  "libtinygltf.pdb"
+  "libtinygltfd.a"
+  "libtinygltfd.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

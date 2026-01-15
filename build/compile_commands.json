@@ -108,6 +108,738 @@
   "output": "third_party/tinygltf/CMakeFiles/tinygltf.dir/tiny_gltf_impl.cpp.obj"
 },
 {
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\adler32.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\adler32.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/adler32.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/adler32.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\compress.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\compress.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/compress.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/compress.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\crc32.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\crc32.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/crc32.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/crc32.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\deflate.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\deflate.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/deflate.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/deflate.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\gzclose.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\gzclose.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/gzclose.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/gzclose.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\gzlib.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\gzlib.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/gzlib.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/gzlib.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\gzread.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\gzread.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/gzread.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/gzread.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\gzwrite.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\gzwrite.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/gzwrite.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/gzwrite.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\inflate.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\inflate.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/inflate.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/inflate.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\infback.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\infback.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/infback.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/infback.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\inftrees.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\inftrees.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/inftrees.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/inftrees.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\inffast.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\inffast.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/inffast.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/inffast.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\trees.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\trees.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/trees.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/trees.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\uncompr.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\uncompr.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/uncompr.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/uncompr.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlib.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlib.dir\\zutil.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\zutil.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/zutil.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlib.dir/zutil.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\adler32.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\adler32.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/adler32.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/adler32.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\compress.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\compress.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/compress.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/compress.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\crc32.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\crc32.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/crc32.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/crc32.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\deflate.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\deflate.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/deflate.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/deflate.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\gzclose.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\gzclose.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/gzclose.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzclose.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\gzlib.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\gzlib.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/gzlib.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzlib.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\gzread.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\gzread.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/gzread.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzread.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\gzwrite.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\gzwrite.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/gzwrite.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/gzwrite.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\inflate.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\inflate.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/inflate.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/inflate.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\infback.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\infback.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/infback.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/infback.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\inftrees.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\inftrees.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/inftrees.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/inftrees.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\inffast.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\inffast.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/inffast.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/inffast.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\trees.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\trees.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/trees.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/trees.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\uncompr.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\uncompr.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/uncompr.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/uncompr.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/zlib",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DWIN32_LEAN_AND_MEAN -D_LARGEFILE64_SOURCE=1 @CMakeFiles/zlibstatic.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\zlibstatic.dir\\zutil.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zlib\\zutil.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zlib/zutil.c",
+  "output": "third_party/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/zutil.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/contrib/irrXML",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_NO_C4D_IMPORTER -DWIN32_LEAN_AND_MEAN @CMakeFiles/IrrXML.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\IrrXML.dir\\irrXML.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\irrXML\\irrXML.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/irrXML/irrXML.cpp",
+  "output": "third_party/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/irrXML.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\Assimp.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\Assimp.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/Assimp.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/Assimp.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\CApi\\CInterfaceIOWrapper.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\CApi\\CInterfaceIOWrapper.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/CApi/CInterfaceIOWrapper.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/CApi/CInterfaceIOWrapper.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\BaseImporter.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\BaseImporter.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/BaseImporter.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/BaseImporter.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\BaseProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\BaseProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/BaseProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/BaseProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\PostStepRegistry.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\PostStepRegistry.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/PostStepRegistry.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/PostStepRegistry.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\ImporterRegistry.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\ImporterRegistry.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/ImporterRegistry.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/ImporterRegistry.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\DefaultIOStream.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\DefaultIOStream.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/DefaultIOStream.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/DefaultIOStream.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\DefaultIOSystem.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\DefaultIOSystem.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/DefaultIOSystem.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/DefaultIOSystem.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\ZipArchiveIOSystem.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\ZipArchiveIOSystem.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/ZipArchiveIOSystem.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/ZipArchiveIOSystem.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\Importer.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\Importer.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/Importer.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/Importer.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\SGSpatialSort.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\SGSpatialSort.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/SGSpatialSort.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/SGSpatialSort.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\VertexTriangleAdjacency.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\VertexTriangleAdjacency.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/VertexTriangleAdjacency.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/VertexTriangleAdjacency.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\SpatialSort.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\SpatialSort.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/SpatialSort.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/SpatialSort.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\SceneCombiner.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\SceneCombiner.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/SceneCombiner.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/SceneCombiner.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\ScenePreprocessor.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\ScenePreprocessor.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/ScenePreprocessor.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/ScenePreprocessor.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\SkeletonMeshBuilder.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\SkeletonMeshBuilder.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/SkeletonMeshBuilder.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/SkeletonMeshBuilder.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\SplitByBoneCountProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\SplitByBoneCountProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/SplitByBoneCountProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/SplitByBoneCountProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\StandardShapes.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\StandardShapes.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/StandardShapes.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/StandardShapes.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\TargetAnimation.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\TargetAnimation.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/TargetAnimation.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/TargetAnimation.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\RemoveComments.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\RemoveComments.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/RemoveComments.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/RemoveComments.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\Subdivision.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\Subdivision.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/Subdivision.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/Subdivision.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\scene.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\scene.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/scene.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/scene.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\Bitmap.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\Bitmap.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/Bitmap.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/Bitmap.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\Version.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\Version.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/Version.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/Version.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\CreateAnimMesh.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\CreateAnimMesh.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/CreateAnimMesh.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/CreateAnimMesh.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\simd.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\simd.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/simd.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/simd.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\DefaultLogger.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\DefaultLogger.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/DefaultLogger.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/DefaultLogger.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Common\\Exporter.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Common\\Exporter.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Common/Exporter.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Common/Exporter.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\CApi\\AssimpCExport.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\CApi\\AssimpCExport.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/CApi/AssimpCExport.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/CApi/AssimpCExport.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\CalcTangentsProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\CalcTangentsProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/CalcTangentsProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/CalcTangentsProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\ComputeUVMappingProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\ComputeUVMappingProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/ComputeUVMappingProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/ComputeUVMappingProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\ConvertToLHProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\ConvertToLHProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/ConvertToLHProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/ConvertToLHProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\EmbedTexturesProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\EmbedTexturesProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/EmbedTexturesProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/EmbedTexturesProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\FindDegenerates.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\FindDegenerates.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/FindDegenerates.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/FindDegenerates.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\FindInstancesProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\FindInstancesProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/FindInstancesProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/FindInstancesProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\FindInvalidDataProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\FindInvalidDataProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/FindInvalidDataProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/FindInvalidDataProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\FixNormalsStep.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\FixNormalsStep.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/FixNormalsStep.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/FixNormalsStep.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\DropFaceNormalsProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\DropFaceNormalsProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/DropFaceNormalsProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/DropFaceNormalsProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\GenFaceNormalsProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\GenFaceNormalsProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/GenFaceNormalsProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/GenFaceNormalsProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\GenVertexNormalsProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\GenVertexNormalsProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/GenVertexNormalsProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/GenVertexNormalsProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\PretransformVertices.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\PretransformVertices.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/PretransformVertices.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/PretransformVertices.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\ImproveCacheLocality.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\ImproveCacheLocality.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/ImproveCacheLocality.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/ImproveCacheLocality.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\JoinVerticesProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\JoinVerticesProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/JoinVerticesProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/JoinVerticesProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\LimitBoneWeightsProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\LimitBoneWeightsProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/LimitBoneWeightsProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/LimitBoneWeightsProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\RemoveRedundantMaterials.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\RemoveRedundantMaterials.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/RemoveRedundantMaterials.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/RemoveRedundantMaterials.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\RemoveVCProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\RemoveVCProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/RemoveVCProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/RemoveVCProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\SortByPTypeProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\SortByPTypeProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/SortByPTypeProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/SortByPTypeProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\SplitLargeMeshes.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\SplitLargeMeshes.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/SplitLargeMeshes.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/SplitLargeMeshes.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\TextureTransform.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\TextureTransform.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/TextureTransform.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/TextureTransform.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\TriangulateProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\TriangulateProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/TriangulateProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/TriangulateProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\ValidateDataStructure.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\ValidateDataStructure.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/ValidateDataStructure.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/ValidateDataStructure.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\OptimizeGraph.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\OptimizeGraph.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/OptimizeGraph.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/OptimizeGraph.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\OptimizeMeshes.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\OptimizeMeshes.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/OptimizeMeshes.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/OptimizeMeshes.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\DeboneProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\DeboneProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/DeboneProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/DeboneProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\ProcessHelper.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\ProcessHelper.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/ProcessHelper.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/ProcessHelper.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\MakeVerboseFormat.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\MakeVerboseFormat.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/MakeVerboseFormat.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/MakeVerboseFormat.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\ScaleProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\ScaleProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/ScaleProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/ScaleProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\PostProcessing\\GenBoundingBoxesProcess.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\PostProcessing\\GenBoundingBoxesProcess.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/PostProcessing/GenBoundingBoxesProcess.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/PostProcessing/GenBoundingBoxesProcess.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Material\\MaterialSystem.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Material\\MaterialSystem.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Material/MaterialSystem.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Material/MaterialSystem.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Importer\\STEPParser\\STEPFileReader.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Importer\\STEPParser\\STEPFileReader.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Importer/STEPParser/STEPFileReader.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Importer/STEPParser/STEPFileReader.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\Importer\\STEPParser\\STEPFileEncoding.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\Importer\\STEPParser\\STEPFileEncoding.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/Importer/STEPParser/STEPFileEncoding.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/Importer/STEPParser/STEPFileEncoding.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXImporter.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXImporter.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXImporter.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXImporter.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXParser.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXParser.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXParser.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXParser.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXTokenizer.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXTokenizer.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXTokenizer.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXTokenizer.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXConverter.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXConverter.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXConverter.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXConverter.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXUtil.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXUtil.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXUtil.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXUtil.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXDocument.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXDocument.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXDocument.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXDocument.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXProperties.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXProperties.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXProperties.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXProperties.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXMeshGeometry.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXMeshGeometry.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXMeshGeometry.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXMeshGeometry.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXMaterial.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXMaterial.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXMaterial.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXMaterial.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXModel.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXModel.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXModel.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXModel.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXAnimation.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXAnimation.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXAnimation.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXAnimation.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXNodeAttribute.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXNodeAttribute.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXNodeAttribute.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXNodeAttribute.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXDeformer.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXDeformer.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXDeformer.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXDeformer.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXBinaryTokenizer.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXBinaryTokenizer.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXBinaryTokenizer.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXBinaryTokenizer.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\FBX\\FBXDocumentUtil.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\code\\FBX\\FBXDocumentUtil.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/code/FBX/FBXDocumentUtil.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/FBX/FBXDocumentUtil.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\unzip\\ioapi.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\unzip\\ioapi.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/unzip/ioapi.c",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/unzip/ioapi.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\unzip\\unzip.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\unzip\\unzip.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/unzip/unzip.c",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/unzip/unzip.c.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\poly2tri\\poly2tri\\common\\shapes.cc.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\poly2tri\\poly2tri\\common\\shapes.cc",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/poly2tri/poly2tri/common/shapes.cc",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/common/shapes.cc.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\poly2tri\\poly2tri\\sweep\\advancing_front.cc.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\poly2tri\\poly2tri\\sweep\\advancing_front.cc",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/poly2tri/poly2tri/sweep/advancing_front.cc",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/advancing_front.cc.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\poly2tri\\poly2tri\\sweep\\cdt.cc.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\poly2tri\\poly2tri\\sweep\\cdt.cc",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/poly2tri/poly2tri/sweep/cdt.cc",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/cdt.cc.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\poly2tri\\poly2tri\\sweep\\sweep.cc.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\poly2tri\\poly2tri\\sweep\\sweep.cc",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/poly2tri/poly2tri/sweep/sweep.cc",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/sweep.cc.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\poly2tri\\poly2tri\\sweep\\sweep_context.cc.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\poly2tri\\poly2tri\\sweep\\sweep_context.cc",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/poly2tri/poly2tri/sweep/sweep_context.cc",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/sweep/sweep_context.cc.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\clipper\\clipper.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\clipper\\clipper.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/clipper/clipper.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/clipper/clipper.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\openddlparser\\code\\OpenDDLParser.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\openddlparser\\code\\OpenDDLParser.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/openddlparser/code/OpenDDLParser.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLParser.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\openddlparser\\code\\DDLNode.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\openddlparser\\code\\DDLNode.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/openddlparser/code/DDLNode.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/DDLNode.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\openddlparser\\code\\OpenDDLCommon.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\openddlparser\\code\\OpenDDLCommon.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/openddlparser/code/OpenDDLCommon.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLCommon.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\openddlparser\\code\\OpenDDLExport.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\openddlparser\\code\\OpenDDLExport.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/openddlparser/code/OpenDDLExport.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLExport.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\openddlparser\\code\\Value.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\openddlparser\\code\\Value.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/openddlparser/code/Value.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/Value.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_CXX.rsp -g -fvisibility=hidden -fno-strict-aliasing -Wall -fPIC -std=c++0x  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\openddlparser\\code\\OpenDDLStream.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\openddlparser\\code\\OpenDDLStream.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/openddlparser/code/OpenDDLStream.cpp",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/openddlparser/code/OpenDDLStream.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/third_party/assimp/code",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\gcc.exe -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DMINIZ_USE_UNALIGNED_LOADS_AND_STORES=0 -DOPENDDLPARSER_BUILD -DWIN32_LEAN_AND_MEAN @CMakeFiles/assimp.dir/includes_C.rsp -fno-strict-aliasing -fPIC  -g -o CMakeFiles\\assimp.dir\\__\\contrib\\zip\\src\\zip.c.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\assimp\\contrib\\zip\\src\\zip.c",
+  "file": "D:/geo_lab/final/-SSAO-/third_party/assimp/contrib/zip/src/zip.c",
+  "output": "third_party/assimp/code/CMakeFiles/assimp.dir/__/contrib/zip/src/zip.c.obj"
+},
+{
   "directory": "D:/geo_lab/final/-SSAO-/build/third_party/imgui",
   "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/imgui.dir/includes_CXX.rsp -g -o CMakeFiles\\imgui.dir\\imgui_demo.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\third_party\\imgui\\imgui_demo.cpp",
   "file": "D:/geo_lab/final/-SSAO-/third_party/imgui/imgui_demo.cpp",
@@ -151,26 +883,38 @@
 },
 {
   "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
-  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC -DSHADER_SOURCE_DIR=\\\"D:/geo_lab/final/-SSAO-/src/06-ssao/shaders\\\" @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\main.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\main.cpp",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\main.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\main.cpp",
   "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/main.cpp",
   "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/main.cpp.obj"
 },
 {
   "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
-  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC -DSHADER_SOURCE_DIR=\\\"D:/geo_lab/final/-SSAO-/src/06-ssao/shaders\\\" @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\shader.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\shader.cpp",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\shader.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\shader.cpp",
   "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/shader.cpp",
   "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/shader.cpp.obj"
 },
 {
   "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
-  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC -DSHADER_SOURCE_DIR=\\\"D:/geo_lab/final/-SSAO-/src/06-ssao/shaders\\\" @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\renderer.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\renderer.cpp",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\renderer.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\renderer.cpp",
   "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/renderer.cpp",
   "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/renderer.cpp.obj"
 },
 {
   "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
-  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC -DSHADER_SOURCE_DIR=\\\"D:/geo_lab/final/-SSAO-/src/06-ssao/shaders\\\" @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\model_loader.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\model_loader.cpp",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\model_loader.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\model_loader.cpp",
   "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/model_loader.cpp",
   "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/model_loader.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\fbx_model.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\fbx_model.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/fbx_model.cpp",
+  "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj"
+},
+{
+  "directory": "D:/geo_lab/final/-SSAO-/build/src/06-ssao",
+  "command": "D:\\gytx_x86_64-12.2.0-posix-seh\\mingw64\\bin\\g++.exe -DGLEW_STATIC @CMakeFiles/ssao_demo.dir/includes_CXX.rsp -g -o CMakeFiles\\ssao_demo.dir\\gbuffer.cpp.obj -c D:\\geo_lab\\final\\-SSAO-\\src\\06-ssao\\gbuffer.cpp",
+  "file": "D:/geo_lab/final/-SSAO-/src/06-ssao/gbuffer.cpp",
+  "output": "src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj"
 }
 ]

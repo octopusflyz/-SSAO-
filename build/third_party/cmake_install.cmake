@@ -59,6 +59,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("D:/geo_lab/final/-SSAO-/build/third_party/assimp/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("D:/geo_lab/final/-SSAO-/build/third_party/imgui/cmake_install.cmake")
 endif()
 

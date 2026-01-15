@@ -86,7 +86,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\" \"assimp-dev\" \"libassimp5.0.0-dev\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -173,6 +173,54 @@ ssao_demo: src/06-ssao/CMakeFiles/ssao_demo.dir/rule
 ssao_demo/fast:
 	cd /d D:\geo_lab\final\-SSAO-\build && $(MAKE) $(MAKESILENT) -f src\06-ssao\CMakeFiles\ssao_demo.dir\build.make src/06-ssao/CMakeFiles/ssao_demo.dir/build
 .PHONY : ssao_demo/fast
+
+fbx_model.obj: fbx_model.cpp.obj
+.PHONY : fbx_model.obj
+
+# target to build an object file
+fbx_model.cpp.obj:
+	cd /d D:\geo_lab\final\-SSAO-\build && $(MAKE) $(MAKESILENT) -f src\06-ssao\CMakeFiles\ssao_demo.dir\build.make src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.obj
+.PHONY : fbx_model.cpp.obj
+
+fbx_model.i: fbx_model.cpp.i
+.PHONY : fbx_model.i
+
+# target to preprocess a source file
+fbx_model.cpp.i:
+	cd /d D:\geo_lab\final\-SSAO-\build && $(MAKE) $(MAKESILENT) -f src\06-ssao\CMakeFiles\ssao_demo.dir\build.make src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.i
+.PHONY : fbx_model.cpp.i
+
+fbx_model.s: fbx_model.cpp.s
+.PHONY : fbx_model.s
+
+# target to generate assembly for a file
+fbx_model.cpp.s:
+	cd /d D:\geo_lab\final\-SSAO-\build && $(MAKE) $(MAKESILENT) -f src\06-ssao\CMakeFiles\ssao_demo.dir\build.make src/06-ssao/CMakeFiles/ssao_demo.dir/fbx_model.cpp.s
+.PHONY : fbx_model.cpp.s
+
+gbuffer.obj: gbuffer.cpp.obj
+.PHONY : gbuffer.obj
+
+# target to build an object file
+gbuffer.cpp.obj:
+	cd /d D:\geo_lab\final\-SSAO-\build && $(MAKE) $(MAKESILENT) -f src\06-ssao\CMakeFiles\ssao_demo.dir\build.make src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.obj
+.PHONY : gbuffer.cpp.obj
+
+gbuffer.i: gbuffer.cpp.i
+.PHONY : gbuffer.i
+
+# target to preprocess a source file
+gbuffer.cpp.i:
+	cd /d D:\geo_lab\final\-SSAO-\build && $(MAKE) $(MAKESILENT) -f src\06-ssao\CMakeFiles\ssao_demo.dir\build.make src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.i
+.PHONY : gbuffer.cpp.i
+
+gbuffer.s: gbuffer.cpp.s
+.PHONY : gbuffer.s
+
+# target to generate assembly for a file
+gbuffer.cpp.s:
+	cd /d D:\geo_lab\final\-SSAO-\build && $(MAKE) $(MAKESILENT) -f src\06-ssao\CMakeFiles\ssao_demo.dir\build.make src/06-ssao/CMakeFiles/ssao_demo.dir/gbuffer.cpp.s
+.PHONY : gbuffer.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -283,6 +331,12 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... ssao_demo
+	@echo ... fbx_model.obj
+	@echo ... fbx_model.i
+	@echo ... fbx_model.s
+	@echo ... gbuffer.obj
+	@echo ... gbuffer.i
+	@echo ... gbuffer.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

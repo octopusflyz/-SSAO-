@@ -48,16 +48,19 @@ GLuint Shader::compileShader(const std::string &src, GLenum type) {
     GLint ok = GL_FALSE;
     glGetShaderiv(id, GL_COMPILE_STATUS, &ok);
     if (!ok) {
-        GLint len = 0; glGetShaderiv(id, GL_INFO_LOG_LENGTH, &len);
-        std::string log(len, '\0');
-        glGetShaderInfoLog(id, len, nullptr, &log[0]);
-        std::cerr << "Shader compile error: " << log << std::endl;
+        printCompileError(id, type);
         glDeleteShader(id);
         return 0;
     }
     return id;
 }
 
+void Shader::printCompileError(GLuint id, GLenum type) {
+    GLint len = 0; glGetShaderiv(id, GL_INFO_LOG_LENGTH, &len);
+    std::string log(len, '\0');
+    glGetShaderInfoLog(id, len, nullptr, &log[0]);
+    std::cerr << "Shader compile error (type=" << type << "): " << log << std::endl;
+}
 bool Shader::loadFromFiles(const std::string &vertPath, const std::string &fragPath) {
     std::string vsrc = readFile(vertPath);
     std::string fsrc = readFile(fragPath);
