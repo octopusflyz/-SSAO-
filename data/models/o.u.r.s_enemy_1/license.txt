@@ -1,0 +1,11 @@
+Model Information:
+* title:	O.U.R.S: Enemy #1
+* source:	https://sketchfab.com/3d-models/ours-enemy-1-d3cbbbc04db440d5907ab9e6f737c729
+* author:	Kuruzeus (https://sketchfab.com/kuruzeus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "O.U.R.S: Enemy #1" (https://sketchfab.com/3d-models/ours-enemy-1-d3cbbbc04db440d5907ab9e6f737c729) by Kuruzeus (https://sketchfab.com/kuruzeus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

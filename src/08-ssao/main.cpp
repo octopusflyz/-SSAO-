@@ -12,12 +12,28 @@
 #include <iostream>
 #include <tiny_gltf.h>
 #include <vector>
+#include <cstdlib> // for rand()
+#include <ctime>   // for time()
 
 struct FireballEffect {
   glm::vec3 position;
   glm::vec3 velocity;
   float lifetime; // seconds
   float maxLifetime = 5.0f; // 5 seconds lifetime
+};
+
+struct EnemyEffect {
+  glm::vec3 position;
+  glm::vec3 velocity;
+  glm::vec3 baseDirection; // Original direction towards player
+  float lifetime; // seconds
+  float maxLifetime = 10.0f; // 10 seconds lifetime
+  float waveAmplitude = 0.0f; // Random horizontal wave amplitude
+  float waveFrequency = 0.0f; // Random wave frequency
+  float waveOffset = 0.0f; // Random wave offset
+  float verticalWaveAmplitude = 0.0f; // Random vertical wave amplitude
+  float verticalWaveFrequency = 0.0f; // Random vertical wave frequency
+  float verticalWaveOffset = 0.0f; // Random vertical wave offset
 };
 
 class SSAOApp final : public Application {
@@ -55,11 +71,53 @@ private:
       // Create fireball effect at player's eye position
       FireballEffect fireball;
       fireball.position = _playerPosition + glm::vec3(0.0f, 1.5f, 0.0f); // eye level
-      fireball.velocity = launchDirection * 15.0f; // 15 units per second speed
+      fireball.velocity = launchDirection * 25.0f; // 25 units per second speed (increased)
       fireball.lifetime = 0.0f;
 
       _fireballEffects.push_back(fireball);
       printf("Fireball launched! Total effects: %zu\n", _fireballEffects.size());
+    }
+
+    // Launch enemy with 3 key
+    if ((key == GLFW_KEY_3 || key == GLFW_KEY_KP_3) && action == GLFW_PRESS) {
+      // Hand monster position
+      glm::vec3 handMonsterPos = glm::vec3(-40.00f, 0.00f, -0.70f);
+
+        // Calculate direction from hand monster to player
+        glm::vec3 directionToPlayer = _playerPosition - handMonsterPos;
+        glm::vec3 normalizedDirection = glm::normalize(directionToPlayer);
+
+        // Create enemy effect starting from hand monster position
+        EnemyEffect enemy;
+        enemy.position = handMonsterPos; // Start at hand monster position
+        enemy.velocity = normalizedDirection * 12.0f; // 12 units per second speed towards player
+        enemy.baseDirection = normalizedDirection; // Store base direction
+        enemy.lifetime = 0.0f;
+
+        // Add random wave parameters for path variation (increased amplitude)
+        enemy.waveAmplitude = 4.0f + (rand() % 100) / 100.0f * 6.0f; // Random horizontal amplitude 4.0-10.0
+        enemy.waveFrequency = 1.0f + (rand() % 100) / 100.0f * 2.0f; // Random frequency 1.0-3.0
+        enemy.waveOffset = (rand() % 100) / 100.0f * 2.0f * 3.14159f; // Random phase offset
+
+        // Add random vertical wave parameters
+        enemy.verticalWaveAmplitude = 3.0f + (rand() % 100) / 100.0f * 4.0f; // Random vertical amplitude 3.0-7.0
+        enemy.verticalWaveFrequency = 1.5f + (rand() % 100) / 100.0f * 1.5f; // Random vertical frequency 1.5-3.0
+        enemy.verticalWaveOffset = (rand() % 100) / 100.0f * 2.0f * 3.14159f; // Random vertical phase offset
+
+        _enemyEffects.push_back(enemy);
+        printf("Enemy launched towards player! Total effects: %zu\n", _enemyEffects.size());
+    }
+
+    // Toggle combat mode with P key
+    if (key == GLFW_KEY_P && action == GLFW_PRESS) {
+      _combatMode = !_combatMode;
+      if (_combatMode) {
+        printf("Combat mode STARTED!\n");
+        _combatTimer = 0.0f; // Reset timer when starting combat
+      } else {
+        printf("Combat mode ENDED! Clearing %zu combat enemies.\n", _combatEnemies.size());
+        _combatEnemies.clear(); // Clear all combat mode enemies
+      }
     }
   }
 
@@ -220,6 +278,9 @@ private:
     return glm::degrees(_cameraYaw);
   }
   void init() override {
+    // Initialize random seed for enemy wave motion
+    srand(static_cast<unsigned int>(time(NULL)));
+
     // Load multiple models
     _scenes.push_back(std::make_unique<Gltf>(
         "models/old_church_modeling_-_interior_scene/scene.gltf"));
@@ -233,6 +294,14 @@ private:
     // 添加火球模型
     _scenes.push_back(std::make_unique<Gltf>(
         "models/fireball/scene.gltf"));
+
+    // 添加手怪模型
+    _scenes.push_back(std::make_unique<Gltf>(
+        "models/hand_monster/scene.gltf"));
+
+    // 添加敌人模型
+    _scenes.push_back(std::make_unique<Gltf>(
+        "models/o.u.r.s_enemy_1/scene.gltf"));
 
     // Print scene info for debugging
     std::cout << "Loaded " << _scenes.size() << " scenes" << std::endl;
@@ -307,6 +376,10 @@ private:
       ImGui::Text("WASD: Move horizontal");
       ImGui::Text("QE: Move up/down");
       ImGui::Text("Mouse: Look around");
+      ImGui::Text("1: Toggle magic ring");
+      ImGui::Text("2: Launch fireball");
+      ImGui::Text("3: Launch enemy towards player");
+      ImGui::Text("P: Toggle combat mode (3 enemies/2s)");
       ImGui::Text("ESC: Exit");
       ImGui::Text("Player Position: (%.2f, %.2f, %.2f)",
                   _playerPosition.x,
@@ -314,6 +387,14 @@ private:
                   _playerPosition.z);
       ImGui::Text("Camera Yaw: %.1f°", glm::degrees(_cameraYaw));
       ImGui::Text("Camera Pitch: %.1f°", glm::degrees(_cameraPitch));
+
+      ImGui::Separator();
+      ImGui::Text("Combat Mode: %s", _combatMode ? "ON" : "OFF");
+      if (_combatMode) {
+        ImGui::Text("Combat Enemies: %zu", _combatEnemies.size());
+        ImGui::Text("Next spawn in: %.1f s", 2.0f - _combatTimer);
+      }
+      ImGui::Text("Manual Enemies: %zu", _enemyEffects.size());
 
       ImGui::Separator();
       ImGui::SliderFloat("Move Speed", &_moveSpeed, 1.0f, 10.0f);
@@ -446,10 +527,55 @@ private:
             // 组合所有变换：位置 -> 动画旋转 -> 水平旋转 -> 缩放 -> 原始变换
             sceneTransform = ringTranslate * ringAnimRotate * ringRotate *
                            ringScale * draw.transform;
+
+            // 魔法阵使用独立的渲染逻辑（Specular-Glossiness材质）
+            _geometryMaterial->gWVP = _projection * _view * sceneTransform;
+            _geometryMaterial->gWV = _view * sceneTransform;
+            _geometryMaterial->use();
+
+            // 保存当前OpenGL状态
+            GLboolean blendEnabled;
+            glGetBooleanv(GL_BLEND, &blendEnabled);
+
+            // 手动设置Specular-Glossiness材质参数
+            int materialIndex = scene->meshes[draw.index][0].material;
+            if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+              auto &mat = *scene->materials[materialIndex];
+
+              // 设置渲染状态（透明度）- 只影响混合，不影响深度测试
+              if (mat.mode == Gltf::Material::Blend) {
+                glEnable(GL_BLEND);
+                glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+                // 注意：不要禁用深度测试，透明对象仍然需要深度测试来正确排序
+              } else {
+                glDisable(GL_BLEND);
+              }
+
+              // 使用魔法阵的特殊材质（已在gltf.cpp中转换为Metallic-Roughness）
+              _geometryMaterial->setMaterialTextures(scene.get(), mat);
+            } else {
+              // 默认材质设置
+              glActiveTexture(GL_TEXTURE0);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(glGetUniformLocation(
+                              _geometryMaterial->getProgram()->get(), "gBaseColor"),
+                          0);
+            }
+
+            for (auto &prim : scene->meshes[draw.index]) {
+              prim.mesh->draw();
+            }
+
+            // 只恢复混合状态，深度测试保持启用
+            if (blendEnabled) glEnable(GL_BLEND); else glDisable(GL_BLEND);
           } else {
             // 不显示魔法阵：跳过渲染
             continue;
           }
+
+          // 魔法阵已完成渲染，跳过后续处理
+          continue;
         }
 
         // 添加火球渲染逻辑
@@ -518,6 +644,358 @@ private:
           }
 
           // 跳过fireball模型的正常渲染，因为我们已经在上面渲染了所有fireball实例
+          continue;
+        }
+
+        // 添加敌人渲染逻辑
+        if (sceneIdx == 5) { // enemy is the sixth model
+          // 如果没有活跃的敌人效果，不渲染enemy模型
+          if (_enemyEffects.empty() && _combatEnemies.empty()) {
+            continue;
+          }
+
+          // 为每个活跃的敌人效果渲染
+          std::vector<EnemyEffect> allEnemies = _enemyEffects;
+          allEnemies.insert(allEnemies.end(), _combatEnemies.begin(), _combatEnemies.end());
+
+          for (const auto& enemy : allEnemies) {
+            // Scale enemy to larger size
+            glm::mat4 enemyScale = glm::scale(glm::identity<glm::mat4>(),
+                                              glm::vec3(2.0f, 2.0f, 2.0f));
+
+            // 旋转让敌人朝向合适的方向
+            glm::mat4 enemyRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                                glm::radians(90.0f),
+                                                glm::vec3(0.0f, 1.0f, 0.0f));
+
+            glm::mat4 enemyTranslate = glm::translate(glm::identity<glm::mat4>(),
+                                                      enemy.position);
+
+            // 组合变换：位置 -> 方向旋转 -> 缩放 -> 原始变换
+            sceneTransform = enemyTranslate * enemyRotate * enemyScale * draw.transform;
+
+            // 渲染这个敌人
+            _geometryMaterial->gWVP = _projection * _view * sceneTransform;
+            _geometryMaterial->gWV = _view * sceneTransform;
+            _geometryMaterial->use();
+
+            // Set material textures and render state
+            int materialIndex = scene->meshes[draw.index][0].material;
+            if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+              auto &mat = *scene->materials[materialIndex];
+
+              // Set render state based on material mode (只影响混合，不影响深度测试)
+              if (mat.mode == Gltf::Material::Blend) {
+                glEnable(GL_BLEND);
+                glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+              } else {
+                glDisable(GL_BLEND);
+              }
+
+              _geometryMaterial->setMaterialTextures(scene.get(), mat);
+            } else {
+              // Use default white texture if no material
+              glActiveTexture(GL_TEXTURE0);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(glGetUniformLocation(
+                              _geometryMaterial->getProgram()->get(), "gBaseColor"),
+                          0);
+              glActiveTexture(GL_TEXTURE1);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 1]->get());
+              glUniform1i(glGetUniformLocation(
+                              _geometryMaterial->getProgram()->get(), "gNormal"),
+                          1);
+              glActiveTexture(GL_TEXTURE2);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(
+                  glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                       "gMetallicRoughness"),
+                  2);
+              glActiveTexture(GL_TEXTURE3);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(glGetUniformLocation(
+                              _geometryMaterial->getProgram()->get(), "gOcclusion"),
+                          3);
+              glActiveTexture(GL_TEXTURE4);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(glGetUniformLocation(
+                              _geometryMaterial->getProgram()->get(), "gEmission"),
+                          4);
+
+              // Set default material factors
+              glUniform4f(
+                  glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                       "gBaseColorFactor"),
+                  1.0f,
+                  1.0f,
+                  1.0f,
+                  1.0f);
+              glUniform1f(
+                  glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                       "gMetallicFactor"),
+                  0.0f);
+              glUniform1f(
+                  glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                       "gRoughnessFactor"),
+                  0.5f);
+              glUniform1f(
+                  glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                       "gNormalScale"),
+                  1.0f);
+              glUniform1f(
+                  glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                       "gOcclusionStrength"),
+                  1.0f);
+              glUniform3f(
+                  glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                       "gEmissionFactor"),
+                  0.0f,
+                  0.0f,
+                  0.0f);
+            }
+
+            for (auto &prim : scene->meshes[draw.index]) {
+              prim.mesh->draw();
+            }
+          }
+
+          // 跳过enemy模型的正常渲染，因为我们已经在上面渲染了所有enemy实例
+          continue;
+        }
+
+        // For hand_monster (static model at fixed position)
+        if (sceneIdx == 4) { // hand_monster is the fifth model
+          // 将手怪放置在指定位置 (-46.00, 1.00, 0.70)
+          glm::mat4 handMonsterScale = glm::scale(glm::identity<glm::mat4>(),
+                                                   glm::vec3(10.0f, 10.0f, 10.0f)); // 放大十倍
+
+          // 旋转让怪物手朝向 (0, -1, 0) 方向（向下）
+          glm::mat4 handMonsterRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                                     glm::radians(90.0f), // 180度旋转让手朝下
+                                                     glm::vec3(0.0f, -1.0f, 0.0f));
+
+          // 添加轻微晃动动画
+          static float handMonsterAnimTime = 0.0f;
+          handMonsterAnimTime += 0.00f; // 动画速度
+          if (handMonsterAnimTime > 360.0f) handMonsterAnimTime -= 360.0f;
+
+          // 轻微的左右晃动
+          float swayAmount = 0.05f; // 晃动幅度
+          glm::mat4 handMonsterSway = glm::rotate(glm::identity<glm::mat4>(),
+                                                   static_cast<float>(sin(handMonsterAnimTime)) * swayAmount,
+                                                   glm::vec3(0.0f, 0.0f, 1.0f)); // 左右轻微晃动
+
+          glm::mat4 handMonsterTranslate = glm::translate(
+              glm::identity<glm::mat4>(), glm::vec3(-40.00f, 0.00f, -0.70f));
+
+          // 组合变换：位置 -> 晃动 -> 方向旋转 -> 缩放 -> 原始变换
+          sceneTransform = handMonsterTranslate * handMonsterSway * handMonsterRotate * handMonsterScale * draw.transform;
+
+          // 渲染手怪
+          _geometryMaterial->gWVP = _projection * _view * sceneTransform;
+          _geometryMaterial->gWV = _view * sceneTransform;
+          _geometryMaterial->use();
+
+          // Set material textures and render state
+          int materialIndex = scene->meshes[draw.index][0].material;
+          if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+            auto &mat = *scene->materials[materialIndex];
+
+            // Set render state based on material mode (只影响混合，不影响深度测试)
+            if (mat.mode == Gltf::Material::Blend) {
+              glEnable(GL_BLEND);
+              glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            } else {
+              glDisable(GL_BLEND);
+            }
+
+            _geometryMaterial->setMaterialTextures(scene.get(), mat);
+          } else {
+            // Use default white texture if no material
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _geometryMaterial->getProgram()->get(), "gBaseColor"),
+                        0);
+            glActiveTexture(GL_TEXTURE1);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 1]->get());
+            glUniform1i(glGetUniformLocation(
+                            _geometryMaterial->getProgram()->get(), "gNormal"),
+                        1);
+            glActiveTexture(GL_TEXTURE2);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gMetallicRoughness"),
+                2);
+            glActiveTexture(GL_TEXTURE3);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _geometryMaterial->getProgram()->get(), "gOcclusion"),
+                        3);
+            glActiveTexture(GL_TEXTURE4);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _geometryMaterial->getProgram()->get(), "gEmission"),
+                        4);
+
+            // Set default material factors
+            glUniform4f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gBaseColorFactor"),
+                1.0f,
+                1.0f,
+                1.0f,
+                1.0f);
+            glUniform1f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gMetallicFactor"),
+                0.0f);
+            glUniform1f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gRoughnessFactor"),
+                0.5f);
+            glUniform1f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gNormalScale"),
+                1.0f);
+            glUniform1f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gOcclusionStrength"),
+                1.0f);
+            glUniform3f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gEmissionFactor"),
+                0.0f,
+                0.0f,
+                0.0f);
+          }
+
+          for (auto &prim : scene->meshes[draw.index]) {
+            prim.mesh->draw();
+          }
+
+          // 跳过正常的渲染循环
+          continue;
+        }
+
+        // For enemy model (static model in front of hand monster)
+        if (sceneIdx == 5) { // enemy is the sixth model
+          // 将敌人放置在手怪前方，稍微高一点
+          glm::mat4 enemyScale = glm::scale(glm::identity<glm::mat4>(),
+                                             glm::vec3(1.0f, 1.0f, 1.0f)); // 正常大小
+
+          // 旋转让敌人朝向合适的方向
+          glm::mat4 enemyRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                               glm::radians(90.0f),
+                                               glm::vec3(0.0f, 1.0f, 0.0f));
+
+          glm::mat4 enemyTranslate = glm::translate(
+              glm::identity<glm::mat4>(), glm::vec3(-10.0f, 2.0f, 5.0f));
+
+          // 组合变换：位置 -> 方向旋转 -> 缩放 -> 原始变换
+          sceneTransform = enemyTranslate * enemyRotate * enemyScale * draw.transform;
+
+          // 渲染敌人
+          _geometryMaterial->gWVP = _projection * _view * sceneTransform;
+          _geometryMaterial->gWV = _view * sceneTransform;
+          _geometryMaterial->use();
+
+          // Set material textures and render state
+          int materialIndex = scene->meshes[draw.index][0].material;
+          if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+            auto &mat = *scene->materials[materialIndex];
+
+            // Set render state based on material mode (只影响混合，不影响深度测试)
+            if (mat.mode == Gltf::Material::Blend) {
+              glEnable(GL_BLEND);
+              glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            } else {
+              glDisable(GL_BLEND);
+            }
+
+            _geometryMaterial->setMaterialTextures(scene.get(), mat);
+          } else {
+            // Use default white texture if no material
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _geometryMaterial->getProgram()->get(), "gBaseColor"),
+                        0);
+            glActiveTexture(GL_TEXTURE1);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 1]->get());
+            glUniform1i(glGetUniformLocation(
+                            _geometryMaterial->getProgram()->get(), "gNormal"),
+                        1);
+            glActiveTexture(GL_TEXTURE2);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gMetallicRoughness"),
+                2);
+            glActiveTexture(GL_TEXTURE3);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _geometryMaterial->getProgram()->get(), "gOcclusion"),
+                        3);
+            glActiveTexture(GL_TEXTURE4);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _geometryMaterial->getProgram()->get(), "gEmission"),
+                        4);
+
+            // Set default material factors
+            glUniform4f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gBaseColorFactor"),
+                1.0f,
+                1.0f,
+                1.0f,
+                1.0f);
+            glUniform1f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gMetallicFactor"),
+                0.0f);
+            glUniform1f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gRoughnessFactor"),
+                0.5f);
+            glUniform1f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gNormalScale"),
+                1.0f);
+            glUniform1f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gOcclusionStrength"),
+                1.0f);
+            glUniform3f(
+                glGetUniformLocation(_geometryMaterial->getProgram()->get(),
+                                     "gEmissionFactor"),
+                0.0f,
+                0.0f,
+                0.0f);
+          }
+
+          for (auto &prim : scene->meshes[draw.index]) {
+            prim.mesh->draw();
+          }
+
+          // 跳过正常的渲染循环
           continue;
         }
 
@@ -714,10 +1192,56 @@ private:
             // 组合所有变换：位置 -> 动画旋转 -> 水平旋转 -> 缩放 -> 原始变换
             sceneTransform = ringTranslate * ringAnimRotate * ringRotate *
                            ringScale * draw.transform;
+
+            // 魔法阵使用独立的渲染逻辑（Specular-Glossiness材质）
+            _lightingMaterial->gWVP = _projection * _view * sceneTransform;
+            _lightingMaterial->gWV = _view * sceneTransform;
+            _lightingMaterial->gWorld = sceneTransform;
+            _lightingMaterial->use();
+
+            // 保存当前OpenGL状态
+            GLboolean blendEnabled;
+            glGetBooleanv(GL_BLEND, &blendEnabled);
+
+            // 手动设置Specular-Glossiness材质参数
+            int materialIndex = scene->meshes[draw.index][0].material;
+            if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+              auto &mat = *scene->materials[materialIndex];
+
+              // 设置渲染状态（透明度）- 只影响混合，不影响深度测试
+              if (mat.mode == Gltf::Material::Blend) {
+                glEnable(GL_BLEND);
+                glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+                // 注意：不要禁用深度测试，透明对象仍然需要深度测试来正确排序
+              } else {
+                glDisable(GL_BLEND);
+              }
+
+              // 使用魔法阵的特殊材质（已在gltf.cpp中转换为Metallic-Roughness）
+              _lightingMaterial->setMaterialTextures(scene.get(), mat);
+            } else {
+              // 默认材质设置
+              glActiveTexture(GL_TEXTURE4);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(glGetUniformLocation(
+                              _lightingMaterial->getProgram()->get(), "gBaseColor"),
+                          4);
+            }
+
+            for (auto &prim : scene->meshes[draw.index]) {
+              prim.mesh->draw();
+            }
+
+            // 只恢复混合状态，深度测试保持启用
+            if (blendEnabled) glEnable(GL_BLEND); else glDisable(GL_BLEND);
           } else {
             // 不显示魔法阵：跳过渲染
             continue;
           }
+
+          // 魔法阵已完成渲染，跳过后续处理
+          continue;
         }
 
         // 添加火球渲染逻辑
@@ -802,6 +1326,309 @@ private:
           }
 
           // 跳过正常的渲染循环，因为我们已经在上面渲染了所有火球
+          continue;
+        }
+
+        // 添加敌人渲染逻辑
+        if (sceneIdx == 5) { // enemy is the sixth model
+          // 如果没有活跃的敌人效果，跳过渲染
+          if (_enemyEffects.empty() && _combatEnemies.empty()) {
+            continue;
+          }
+
+          // 为每个活跃的敌人效果渲染
+          std::vector<EnemyEffect> allEnemies = _enemyEffects;
+          allEnemies.insert(allEnemies.end(), _combatEnemies.begin(), _combatEnemies.end());
+
+          for (const auto& enemy : allEnemies) {
+            // Scale enemy to larger size
+            glm::mat4 enemyScale = glm::scale(glm::identity<glm::mat4>(),
+                                              glm::vec3(2.0f, 2.0f, 2.0f));
+
+            // 旋转让敌人朝向合适的方向
+            glm::mat4 enemyRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                                glm::radians(90.0f),
+                                                glm::vec3(0.0f, 1.0f, 0.0f));
+
+            glm::mat4 enemyTranslate = glm::translate(glm::identity<glm::mat4>(),
+                                                      enemy.position);
+
+            // 组合变换：位置 -> 方向旋转 -> 缩放 -> 原始变换
+            sceneTransform = enemyTranslate * enemyRotate * enemyScale * draw.transform;
+
+            // 渲染这个敌人
+            _lightingMaterial->gWVP = _projection * _view * sceneTransform;
+            _lightingMaterial->gWV = _view * sceneTransform;
+            _lightingMaterial->gWorld = sceneTransform;
+            _lightingMaterial->use();
+
+            // Set material textures
+            int materialIndex = scene->meshes[draw.index][0].material;
+            if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+              auto &mat = *scene->materials[materialIndex];
+
+              _lightingMaterial->setMaterialTextures(scene.get(), mat);
+            } else {
+              // Use default white texture if no material
+              glActiveTexture(GL_TEXTURE4);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(glGetUniformLocation(
+                              _lightingMaterial->getProgram()->get(), "gBaseColor"),
+                          4);
+              glActiveTexture(GL_TEXTURE5);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 1]->get());
+              glUniform1i(glGetUniformLocation(
+                              _lightingMaterial->getProgram()->get(), "gNormal"),
+                          5);
+              glActiveTexture(GL_TEXTURE6);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(
+                  glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                       "gMetallicRoughness"),
+                  6);
+              glActiveTexture(GL_TEXTURE7);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(glGetUniformLocation(
+                              _lightingMaterial->getProgram()->get(), "gOcclusion"),
+                          7);
+              glActiveTexture(GL_TEXTURE8);
+              glBindTexture(GL_TEXTURE_2D,
+                            scene->textures[scene->textures.size() - 2]->get());
+              glUniform1i(glGetUniformLocation(
+                              _lightingMaterial->getProgram()->get(), "gEmission"),
+                          8);
+
+              // Set default material factors
+              glUniform4f(
+                  glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                       "gBaseColorFactor"),
+                  1.0f,
+                  1.0f,
+                  1.0f,
+                  1.0f);
+              glUniform1f(
+                  glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                       "gMetallicFactor"),
+                  0.0f);
+              glUniform1f(
+                  glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                       "gRoughnessFactor"),
+                  0.5f);
+              glUniform1f(
+                  glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                       "gNormalScale"),
+                  1.0f);
+              glUniform1f(
+                  glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                       "gOcclusionStrength"),
+                  1.0f);
+              glUniform3f(
+                  glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                       "gEmissionFactor"),
+                  0.0f,
+                  0.0f,
+                  0.0f);
+            }
+
+            for (auto &prim : scene->meshes[draw.index]) {
+              prim.mesh->draw();
+            }
+          }
+
+          // 跳过正常的渲染循环，因为我们已经在上面渲染了所有敌人
+          continue;
+        }
+
+        // For hand_monster (static model at fixed position)
+        if (sceneIdx == 4) { // hand_monster is the fifth model
+          // 将手怪放置在指定位置 (-46.00, 1.00, 0.70)
+          glm::mat4 handMonsterScale = glm::scale(glm::identity<glm::mat4>(),
+                                                   glm::vec3(10.0f, 10.0f, 10.0f)); // 放大十倍
+
+          // 旋转让怪物手朝向 (0, -1, 0) 方向（向下）
+          glm::mat4 handMonsterRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                                     glm::radians(90.0f), // 180度旋转让手朝下
+                                                     glm::vec3(0.0f, -1.0f, 0.0f));
+
+          // 添加轻微晃动动画
+          static float handMonsterAnimTime = 0.0f;
+          handMonsterAnimTime += 0.00f; // 动画速度
+          if (handMonsterAnimTime > 360.0f) handMonsterAnimTime -= 360.0f;
+
+          // 轻微的左右晃动
+          float swayAmount = 0.05f; // 晃动幅度
+          glm::mat4 handMonsterSway = glm::rotate(glm::identity<glm::mat4>(),
+                                                   static_cast<float>(sin(handMonsterAnimTime)) * swayAmount,
+                                                   glm::vec3(0.0f, 0.0f, 1.0f)); // 左右轻微晃动
+
+          glm::mat4 handMonsterTranslate = glm::translate(
+              glm::identity<glm::mat4>(), glm::vec3(-40.00f, 0.00f, -0.70f));
+
+          // 组合变换：位置 -> 晃动 -> 方向旋转 -> 缩放 -> 原始变换
+          sceneTransform = handMonsterTranslate * handMonsterSway * handMonsterRotate * handMonsterScale * draw.transform;
+
+          // 渲染手怪
+          _lightingMaterial->gWVP = _projection * _view * sceneTransform;
+          _lightingMaterial->gWV = _view * sceneTransform;
+          _lightingMaterial->gWorld = sceneTransform;
+          _lightingMaterial->use();
+
+          // Set material textures
+          int materialIndex = scene->meshes[draw.index][0].material;
+          if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+            auto &mat = *scene->materials[materialIndex];
+            _lightingMaterial->setMaterialTextures(scene.get(), mat);
+
+            // Render the mesh
+            for (auto &prim : scene->meshes[draw.index]) {
+              prim.mesh->draw();
+            }
+          } else {
+            // Use default white texture if no material
+            glActiveTexture(GL_TEXTURE4);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _lightingMaterial->getProgram()->get(), "gBaseColor"),
+                        4);
+            glActiveTexture(GL_TEXTURE5);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 1]->get());
+            glUniform1i(glGetUniformLocation(
+                            _lightingMaterial->getProgram()->get(), "gNormal"),
+                        5);
+            glActiveTexture(GL_TEXTURE6);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _lightingMaterial->getProgram()->get(), "gMetallicRoughness"),
+                        6);
+            glActiveTexture(GL_TEXTURE7);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _lightingMaterial->getProgram()->get(), "gOcclusion"),
+                        7);
+            glActiveTexture(GL_TEXTURE8);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _lightingMaterial->getProgram()->get(), "gEmission"),
+                        8);
+
+            for (auto &prim : scene->meshes[draw.index]) {
+              prim.mesh->draw();
+            }
+          }
+
+          // 跳过正常的渲染循环
+          continue;
+        }
+
+        // For enemy model (static model in front of hand monster)
+        if (sceneIdx == 5) { // enemy is the sixth model
+          // 将敌人放置在手怪前方，稍微高一点
+          glm::mat4 enemyScale = glm::scale(glm::identity<glm::mat4>(),
+                                             glm::vec3(1.0f, 1.0f, 1.0f)); // 正常大小
+
+          // 旋转让敌人朝向合适的方向
+          glm::mat4 enemyRotate = glm::rotate(glm::identity<glm::mat4>(),
+                                               glm::radians(90.0f),
+                                               glm::vec3(0.0f, 1.0f, 0.0f));
+
+          glm::mat4 enemyTranslate = glm::translate(
+              glm::identity<glm::mat4>(), glm::vec3(-10.0f, 2.0f, 5.0f));
+
+          // 组合变换：位置 -> 方向旋转 -> 缩放 -> 原始变换
+          sceneTransform = enemyTranslate * enemyRotate * enemyScale * draw.transform;
+
+          // 渲染敌人
+          _lightingMaterial->gWVP = _projection * _view * sceneTransform;
+          _lightingMaterial->gWV = _view * sceneTransform;
+          _lightingMaterial->gWorld = sceneTransform;
+          _lightingMaterial->use();
+
+          // Set material textures
+          int materialIndex = scene->meshes[draw.index][0].material;
+          if (materialIndex >= 0 && materialIndex < scene->materials.size()) {
+            auto &mat = *scene->materials[materialIndex];
+
+            _lightingMaterial->setMaterialTextures(scene.get(), mat);
+          } else {
+            // Use default white texture if no material
+            glActiveTexture(GL_TEXTURE4);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _lightingMaterial->getProgram()->get(), "gBaseColor"),
+                        4);
+            glActiveTexture(GL_TEXTURE5);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 1]->get());
+            glUniform1i(glGetUniformLocation(
+                            _lightingMaterial->getProgram()->get(), "gNormal"),
+                        5);
+            glActiveTexture(GL_TEXTURE6);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(
+                glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                     "gMetallicRoughness"),
+                6);
+            glActiveTexture(GL_TEXTURE7);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _lightingMaterial->getProgram()->get(), "gOcclusion"),
+                        7);
+            glActiveTexture(GL_TEXTURE8);
+            glBindTexture(GL_TEXTURE_2D,
+                          scene->textures[scene->textures.size() - 2]->get());
+            glUniform1i(glGetUniformLocation(
+                            _lightingMaterial->getProgram()->get(), "gEmission"),
+                        8);
+
+            // Set default material factors
+            glUniform4f(
+                glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                     "gBaseColorFactor"),
+                1.0f,
+                1.0f,
+                1.0f,
+                1.0f);
+            glUniform1f(
+                glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                     "gMetallicFactor"),
+                0.0f);
+            glUniform1f(
+                glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                     "gRoughnessFactor"),
+                0.5f);
+            glUniform1f(
+                glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                     "gNormalScale"),
+                1.0f);
+            glUniform1f(
+                glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                     "gOcclusionStrength"),
+                1.0f);
+            glUniform3f(
+                glGetUniformLocation(_lightingMaterial->getProgram()->get(),
+                                     "gEmissionFactor"),
+                0.0f,
+                0.0f,
+                0.0f);
+          }
+
+          for (auto &prim : scene->meshes[draw.index]) {
+            prim.mesh->draw();
+          }
+
+          // 跳过正常的渲染循环
           continue;
         }
 
@@ -1043,6 +1870,103 @@ private:
       }
     }
 
+    // Update enemy effects
+    for (auto it = _enemyEffects.begin(); it != _enemyEffects.end();) {
+      // Apply wave motion to create varied paths (horizontal and vertical)
+      float horizontalWaveValue = sin(it->lifetime * it->waveFrequency + it->waveOffset) * it->waveAmplitude;
+      float verticalWaveValue = sin(it->lifetime * it->verticalWaveFrequency + it->verticalWaveOffset) * it->verticalWaveAmplitude;
+
+      // Calculate perpendicular vector for horizontal wave motion (left-right)
+      glm::vec3 horizontalWaveDirection = glm::normalize(glm::cross(it->baseDirection, glm::vec3(0.0f, 1.0f, 0.0f)));
+
+      // Vertical wave direction is world up
+      glm::vec3 verticalWaveDirection = glm::vec3(0.0f, 1.0f, 0.0f);
+
+      // Apply wave motion to velocity (increased intensity)
+      glm::vec3 currentVelocity = it->baseDirection * 12.0f +
+                                  horizontalWaveDirection * horizontalWaveValue * 2.0f +
+                                  verticalWaveDirection * verticalWaveValue * 1.5f;
+
+      it->position += currentVelocity * deltaTime;
+      it->lifetime += deltaTime;
+
+      // Remove enemy if lifetime exceeded
+      if (it->lifetime >= it->maxLifetime) {
+        it = _enemyEffects.erase(it);
+      } else {
+        ++it;
+      }
+    }
+
+    // Combat mode logic
+    if (_combatMode) {
+      _combatTimer += deltaTime;
+
+      // Spawn 3 enemies every 2 seconds
+      if (_combatTimer >= _combatSpawnInterval) {
+        _combatTimer = 0.0f; // Reset timer
+
+        // Hand monster position
+        glm::vec3 handMonsterPos = glm::vec3(-40.00f, 0.00f, -0.70f);
+
+        // Calculate direction from hand monster to player
+        glm::vec3 directionToPlayer = _playerPosition - handMonsterPos;
+        glm::vec3 normalizedDirection = glm::normalize(directionToPlayer);
+
+        // Spawn 3 enemies at once
+        for (int i = 0; i < 3; ++i) {
+          // Create enemy effect starting from hand monster position
+          EnemyEffect enemy;
+          enemy.position = handMonsterPos; // Start at hand monster position
+          enemy.velocity = normalizedDirection * 12.0f; // 12 units per second speed towards player
+          enemy.baseDirection = normalizedDirection; // Store base direction
+          enemy.lifetime = 0.0f;
+
+          // Add random wave parameters for path variation (increased amplitude)
+          enemy.waveAmplitude = 4.0f + (rand() % 100) / 100.0f * 6.0f; // Random horizontal amplitude 4.0-10.0
+          enemy.waveFrequency = 1.0f + (rand() % 100) / 100.0f * 2.0f; // Random frequency 1.0-3.0
+          enemy.waveOffset = (rand() % 100) / 100.0f * 2.0f * 3.14159f; // Random phase offset
+
+          // Add random vertical wave parameters
+          enemy.verticalWaveAmplitude = 3.0f + (rand() % 100) / 100.0f * 4.0f; // Random vertical amplitude 3.0-7.0
+          enemy.verticalWaveFrequency = 1.5f + (rand() % 100) / 100.0f * 1.5f; // Random vertical frequency 1.5-3.0
+          enemy.verticalWaveOffset = (rand() % 100) / 100.0f * 2.0f * 3.14159f; // Random vertical phase offset
+
+          _combatEnemies.push_back(enemy);
+        }
+
+        printf("3 Combat enemies spawned! Total combat enemies: %zu\n", _combatEnemies.size());
+      }
+
+      // Update combat enemy effects
+      for (auto it = _combatEnemies.begin(); it != _combatEnemies.end();) {
+        // Apply wave motion to create varied paths (horizontal and vertical)
+        float horizontalWaveValue = sin(it->lifetime * it->waveFrequency + it->waveOffset) * it->waveAmplitude;
+        float verticalWaveValue = sin(it->lifetime * it->verticalWaveFrequency + it->verticalWaveOffset) * it->verticalWaveAmplitude;
+
+        // Calculate perpendicular vector for horizontal wave motion (left-right)
+        glm::vec3 horizontalWaveDirection = glm::normalize(glm::cross(it->baseDirection, glm::vec3(0.0f, 1.0f, 0.0f)));
+
+        // Vertical wave direction is world up
+        glm::vec3 verticalWaveDirection = glm::vec3(0.0f, 1.0f, 0.0f);
+
+        // Apply wave motion to velocity
+        glm::vec3 currentVelocity = it->baseDirection * 12.0f +
+                                    horizontalWaveDirection * horizontalWaveValue * 2.0f +
+                                    verticalWaveDirection * verticalWaveValue * 1.5f;
+
+        it->position += currentVelocity * deltaTime;
+        it->lifetime += deltaTime;
+
+        // Remove enemy if lifetime exceeded
+        if (it->lifetime >= it->maxLifetime) {
+          it = _combatEnemies.erase(it);
+        } else {
+          ++it;
+        }
+      }
+    }
+
     draw_ui();
     draw();
   }
@@ -1102,6 +2026,15 @@ private:
 
   // Fireball effects
   std::vector<FireballEffect> _fireballEffects;
+
+  // Enemy effects
+  std::vector<EnemyEffect> _enemyEffects;
+
+  // Combat mode
+  bool _combatMode = false;
+  float _combatTimer = 0.0f;
+  float _combatSpawnInterval = 2.0f; // 2 seconds
+  std::vector<EnemyEffect> _combatEnemies; // Separate vector for combat mode enemies
 
   // Mouse interaction
   double _lastMouseX = 0.0;
