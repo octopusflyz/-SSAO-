@@ -59,6 +59,31 @@ private:
   GLint _gKernelLocation;
 };
 
+class SSDOMaterial : public IMaterial {
+public:
+  Texture2D *gPositionMap = nullptr;
+  Texture2D *gNormalMap = nullptr;
+  Texture2D *gAlbedoMap = nullptr;
+  float gSampleRad = 0.5f;
+  glm::mat4 gProj{};
+  glm::mat4 gView{};
+  std::vector<glm::vec3> gKernel;
+
+  SSDOMaterial();
+  void use() override;
+  void generateKernel();
+
+private:
+  std::unique_ptr<Program> _program;
+  GLint _gPositionMapLocation;
+  GLint _gNormalMapLocation;
+  GLint _gAlbedoMapLocation;
+  GLint _gSampleRadLocation;
+  GLint _gProjLocation;
+  GLint _gViewLocation;
+  GLint _gKernelLocation;
+};
+
 class BlurMaterial : public IMaterial {
 public:
   Texture2D *gColorMap = nullptr;

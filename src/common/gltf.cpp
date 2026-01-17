@@ -6,7 +6,7 @@
 #include <sstream>
 #include <tiny_gltf.h>
 
-Gltf::Gltf(const fs::path &name) {
+Gltf::Gltf(const fs::path &name) : _model_name(name) {
   load_model(name);
 }
 
@@ -57,24 +57,141 @@ void Gltf::load_materials(tinygltf::Model &model) {
     return index < 0 ? default_index : index;
   };
   for (auto &mat : model.materials) {
-    auto &pbr = mat.pbrMetallicRoughness;
     auto m = std::make_unique<Material>();
-    m->base_color = tex(pbr.baseColorTexture.index, _white_tex_index);
-    m->base_color_factor = glm::vec4(pbr.baseColorFactor[0],
-                                     pbr.baseColorFactor[1],
-                                     pbr.baseColorFactor[2],
-                                     pbr.baseColorFactor[3]);
-    m->metallic_factor = (float)pbr.metallicFactor;
-    m->roughness_factor = (float)pbr.roughnessFactor;
-    m->metallic_roughness =
-        tex(pbr.metallicRoughnessTexture.index, _white_tex_index);
+
+    // 根据模型名称决定材质处理方式
+    bool is_magic_ring = _model_name.string().find("magic_ring") != std::string::npos;
+    bool is_church_or_character = _model_name.string().find("church") != std::string::npos ||
+                                  _model_name.string().find("elaina") != std::string::npos;
+
+    if (is_magic_ring) {
+      // 魔法阵：使用Specular-Glossiness处理
+      auto ext_it = mat.extensions.find("KHR_materials_pbrSpecularGlossiness");
+      if (ext_it != mat.extensions.end()) {
+        auto &sg = ext_it->second;
+
+        // 读取diffuseFactor (RGBA颜色)
+        if (sg.Has("diffuseFactor")) {
+          auto &diffuse = sg.Get("diffuseFactor");
+          if (diffuse.IsArray() && diffuse.Size() >= 4) {
+            m->base_color_factor = glm::vec4(
+                diffuse.Get(0).Get<double>(),
+                diffuse.Get(1).Get<double>(),
+                diffuse.Get(2).Get<double>(),
+                diffuse.Get(3).Get<double>());
+          } else {
+            m->base_color_factor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+          }
+        } else {
+          m->base_color_factor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+        }
+
+        // 读取diffuseTexture
+        if (sg.Has("diffuseTexture")) {
+          auto &diffuse_tex = sg.Get("diffuseTexture");
+          if (diffuse_tex.IsObject() && diffuse_tex.Has("index")) {
+            m->base_color = tex(diffuse_tex.Get("index").Get<int>(), _white_tex_index);
+          } else {
+            m->base_color = _white_tex_index;
+          }
+        } else {
+          m->base_color = _white_tex_index;
+        }
+
+        // 读取glossinessFactor并转换为roughness
+        if (sg.Has("glossinessFactor")) {
+          auto &glossiness_val = sg.Get("glossinessFactor");
+          if (glossiness_val.IsNumber()) {
+            float glossiness = (float)glossiness_val.Get<double>();
+            m->roughness_factor = 1.0f - glossiness;
+          } else {
+            m->roughness_factor = 0.5f;
+          }
+        } else {
+          m->roughness_factor = 0.5f;
+        }
+
+        // 读取specularFactor并转换为metallic (使用阈值方法)
+        if (sg.Has("specularFactor")) {
+          auto &specular = sg.Get("specularFactor");
+          if (specular.IsArray() && specular.Size() >= 3) {
+            glm::vec3 specular_factor = glm::vec3(
+                specular.Get(0).Get<double>(),
+                specular.Get(1).Get<double>(),
+                specular.Get(2).Get<double>());
+            float specular_avg = (specular_factor.r + specular_factor.g + specular_factor.b) / 3.0f;
+            if (specular_avg < 0.5f) {
+              m->metallic_factor = 0.0f;  // 非金属材质
+            } else {
+              m->metallic_factor = specular_avg;  // 金属材质
+            }
+          } else {
+            m->metallic_factor = 0.0f;
+          }
+        } else {
+          m->metallic_factor = 0.0f;
+        }
+
+        // specularGlossinessTexture作为metallicRoughness
+        if (sg.Has("specularGlossinessTexture")) {
+          auto &sg_tex = sg.Get("specularGlossinessTexture");
+          if (sg_tex.IsObject() && sg_tex.Has("index")) {
+            m->metallic_roughness = tex(sg_tex.Get("index").Get<int>(), _white_tex_index);
+          } else {
+            m->metallic_roughness = _white_tex_index;
+          }
+        } else {
+          m->metallic_roughness = _white_tex_index;
+        }
+      } else {
+        // 魔法阵如果没有Specular-Glossiness扩展，使用默认设置
+        m->base_color = _white_tex_index;
+        m->base_color_factor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
+        m->metallic_factor = 0.0f;
+        m->roughness_factor = 0.5f;
+        m->metallic_roughness = _white_tex_index;
+      }
+    } else if (is_church_or_character) {
+      // 教堂和人物：强制使用Metallic-Roughness处理
+      // 即使它们有Specular-Glossiness扩展，也忽略它
+      auto &pbr = mat.pbrMetallicRoughness;
+      m->base_color = tex(pbr.baseColorTexture.index, _white_tex_index);
+      m->base_color_factor = glm::vec4(pbr.baseColorFactor[0],
+                                       pbr.baseColorFactor[1],
+                                       pbr.baseColorFactor[2],
+                                       pbr.baseColorFactor[3]);
+      m->metallic_factor = (float)pbr.metallicFactor;
+      m->roughness_factor = (float)pbr.roughnessFactor;
+      m->metallic_roughness = tex(pbr.metallicRoughnessTexture.index, _white_tex_index);
+    } else {
+      // 其他模型：使用标准处理
+      auto &pbr = mat.pbrMetallicRoughness;
+      m->base_color = tex(pbr.baseColorTexture.index, _white_tex_index);
+      m->base_color_factor = glm::vec4(pbr.baseColorFactor[0],
+                                       pbr.baseColorFactor[1],
+                                       pbr.baseColorFactor[2],
+                                       pbr.baseColorFactor[3]);
+      m->metallic_factor = (float)pbr.metallicFactor;
+      m->roughness_factor = (float)pbr.roughnessFactor;
+      m->metallic_roughness = tex(pbr.metallicRoughnessTexture.index, _white_tex_index);
+    }
+
+    // 处理共同的材质属性
     m->normal = tex(mat.normalTexture.index, _default_normal_tex_index);
     m->normal_scale = (float)mat.normalTexture.scale;
     m->occlusion = tex(mat.occlusionTexture.index, _white_tex_index);
     m->occlusion_strength = (float)mat.occlusionTexture.strength;
+
+    // 处理emissive texture
     m->emission = tex(mat.emissiveTexture.index, _white_tex_index);
     m->emission_factor = glm::vec3(
         mat.emissiveFactor[0], mat.emissiveFactor[1], mat.emissiveFactor[2]);
+
+    // 魔法阵：添加粉色发光效果（在原有emissive基础上增强）
+    if (is_magic_ring) {
+      // 在原有发光基础上增强粉色调
+      m->emission_factor += glm::vec3(0.3f, 0.1f, 0.3f); // 添加粉色发光增强
+    }
 
     m->mode = Material::Opaque;
     if (mat.alphaMode == "BLEND") {

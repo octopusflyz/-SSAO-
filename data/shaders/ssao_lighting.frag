@@ -6,12 +6,12 @@ in vec2 uv0_vs;
 
 out vec4 FragColor;
 
-uniform sampler2D gAOMap;
+uniform sampler2D gAOMap; // For SSAO: r=occlusion, for SSDO: r=occlusion, gba=indirect
 uniform sampler2D gNormalMap;
 uniform sampler2D gAlbedoMap;
 uniform sampler2D gPositionMap;
 uniform vec2 gScreenSize;
-uniform int gShaderType;
+uniform int gShaderType; // 0: no AO, 1: SSAO, 2: show only AO, 3: SSDO, 4: show only SSDO indirect
 
 // Material textures
 uniform sampler2D gBaseColor;
@@ -43,7 +43,7 @@ struct PointLight {
 };
 
 uniform BaseLight gLight;
-uniform PointLight gPointLights[4];
+uniform PointLight gPointLights[64];
 uniform int gNumPointLights;
 
 vec2 CalcScreenTexCoord() {
@@ -158,7 +158,7 @@ void main() {
     vec4 gBufferAlbedo = texture(gAlbedoMap, screenUV);
     
     // Skip background pixels
-    if (length(gBufferPos) > 50.0) {
+    if (length(gBufferPos) > 100.0) {
         FragColor = vec4(0.0, 0.0, 0.0, 1.0);
         return;
     }
@@ -189,27 +189,48 @@ void main() {
     
     // Add point lights
     vec3 pointLighting = vec3(0.0);
-    for (int i = 0; i < gNumPointLights; i++) {
+    for (int i = 0; i < 64; i++) {
+        if (i >= gNumPointLights) break;
         pointLighting += calculatePointLight(gPointLights[i], gBufferPos, n_vs, v_vs, brdf);
     }
     
-    // Apply SSAO
-    if (gShaderType == 1) {
+    // Apply SSAO/SSDO
+    vec3 indirectLighting = vec3(0.0);
+    
+    if (gShaderType == 1) { // SSAO
         float ao = texture(gAOMap, screenUV).r;
         ambient *= ao;
+        directional *= mix(1.0, ao, 0.35);
+        pointLighting *= mix(1.0, ao, 0.35);
+    } else if (gShaderType == 3) { // SSDO
+        vec4 ssdoData = texture(gAOMap, screenUV);
+        float ao = ssdoData.r;
+        indirectLighting = ssdoData.gba;
+        
+        // 应用遮挡
+        ambient *= ao;
+        directional *= mix(1.0, ao, 0.35);
+        pointLighting *= mix(1.0, ao, 0.35);
+        
+        // 添加间接光照
+        indirectLighting *= fd; // 乘以漫反射BRDF
     }
     
-    // Apply occlusion texture
+    // Apply occlusion texture: 只影响环境/间接，不压制直接光
     float occlusion = texture(gOcclusion, uv0_vs).r;
-    directional = mix(directional, directional * occlusion, gOcclusionStrength);
+    ambient *= mix(1.0, occlusion, clamp(gOcclusionStrength, 0.0, 1.0));
     
     // Apply emission
     vec3 emission = srgb_to_linear(texture(gEmission, uv0_vs).xyz) * gEmissionFactor;
     
-    vec3 finalColor = directional + ambient + pointLighting + emission;
+    vec3 finalColor = directional + ambient + pointLighting + indirectLighting + emission;
     
     if (gShaderType == 2) { // Show only AO
-        FragColor = texture(gAOMap, screenUV);
+        float ao_vis = texture(gAOMap, screenUV).r;
+        FragColor = vec4(vec3(ao_vis), 1.0);
+    } else if (gShaderType == 4) { // Show only SSDO indirect
+        vec4 ssdoData = texture(gAOMap, screenUV);
+        FragColor = vec4(ssdoData.gba, 1.0);
     } else {
         FragColor = vec4(finalColor, linearBaseColor.a);
     }
