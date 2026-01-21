@@ -37,6 +37,15 @@ struct EnemyEffect {
   float verticalWaveOffset = 0.0f;    // Random vertical wave offset
 };
 
+struct ExplosionEffect {
+  glm::vec3 position;
+  glm::vec3 color;
+  float intensity;
+  float radius;
+  float lifetime;           // seconds
+  float maxLifetime = 1.5f; // 1.5 seconds explosion duration (much longer visibility)
+};
+
 class SSAOApp final : public Application {
 public:
   SSAOApp() : Application("SSAO Tutorial", 800, 600) {}
@@ -62,6 +71,13 @@ private:
 
     // Launch fireball with 2 key
     if ((key == GLFW_KEY_2 || key == GLFW_KEY_KP_2) && action == GLFW_PRESS) {
+      // Limit fireball count to ensure light slots availability (max 12 fireballs)
+      const size_t MAX_FIREBALLS = 12;
+      if (_fireballEffects.size() >= MAX_FIREBALLS) {
+        printf("Maximum fireball limit (%zu) reached!\n", MAX_FIREBALLS);
+        return;
+      }
+
       // Calculate launch direction based on camera view
       glm::vec3 launchDirection;
       launchDirection.x = cos(_cameraPitch) * sin(_cameraYaw);
@@ -74,12 +90,12 @@ private:
       fireball.position =
           _playerPosition + glm::vec3(0.0f, 1.5f, 0.0f); // eye level
       fireball.velocity =
-          launchDirection * 25.0f; // 25 units per second speed (increased)
+          launchDirection * 40.0f; // 40 units per second speed (increased for better hit rate)
       fireball.lifetime = 0.0f;
 
       _fireballEffects.push_back(fireball);
-      printf("Fireball launched! Total effects: %zu\n",
-             _fireballEffects.size());
+      printf("Fireball launched! Total effects: %zu/%zu\n",
+             _fireballEffects.size(), MAX_FIREBALLS);
     }
 
     // Launch enemy with 3 key
@@ -297,7 +313,7 @@ private:
   // Update magic light effects for fireballs and magic ring
   void updateMagicLights(float deltaTime) {
     // Ensure we have enough point lights (index 0 is player light)
-    while (_lightingMaterial->gPointLights.size() < 16) {
+    while (_lightingMaterial->gPointLights.size() < 32) {
       LightingMaterial::PointLight emptyLight;
       emptyLight.Position = glm::vec3(0.0f);
       emptyLight.Color = glm::vec3(0.0f);
@@ -306,28 +322,47 @@ private:
       _lightingMaterial->gPointLights.push_back(emptyLight);
     }
 
-    // Light index 1-15 are available for magic effects
+    // Light index 1-31 are available for magic effects (total 32 lights, index 0 is player light)
     int lightIndex = 1;
 
-    // Update fireball lights (all fireballs, no limit)
-    for (const auto &fireball : _fireballEffects) {
-      if (lightIndex >= 16)
+    // PRIORITY 1: Update explosion lights (highest priority - short-lived but critical)
+    for (const auto &explosion : _explosionEffects) {
+      if (lightIndex >= 32)
         break;
 
-      // Fixed intensity - no attenuation
-      float intensity = 60.0f; // Strong constant intensity
+      // Calculate explosion intensity based on lifetime (bright initial flash that fades)
+      float lifetimeRatio = explosion.lifetime / explosion.maxLifetime;
+      // Use smooth fade-out: start at full intensity, fade to zero
+      float intensity = explosion.intensity * (1.0f - lifetimeRatio);
+
+      _lightingMaterial->gPointLights[lightIndex].Position = explosion.position;
+      _lightingMaterial->gPointLights[lightIndex].Color = explosion.color;
+      _lightingMaterial->gPointLights[lightIndex].Intensity = intensity;
+      _lightingMaterial->gPointLights[lightIndex].Radius = explosion.radius;
+
+      lightIndex++;
+    }
+
+    // PRIORITY 2: Update fireball lights (high priority - need stable lighting for projectiles)
+    for (const auto &fireball : _fireballEffects) {
+      if (lightIndex >= 32)
+        break;
+
+      // Enhanced fireball lighting parameters for better visibility
+      float intensity = 120.0f; // Doubled intensity for better AO visibility
+      float radius = 50.0f;     // Increased radius for wider influence
 
       _lightingMaterial->gPointLights[lightIndex].Position = fireball.position;
       _lightingMaterial->gPointLights[lightIndex].Color =
           glm::vec3(1.0f, 0.7f, 0.4f); // Bright orange-red
       _lightingMaterial->gPointLights[lightIndex].Intensity = intensity;
-      _lightingMaterial->gPointLights[lightIndex].Radius = 30.0f;
+      _lightingMaterial->gPointLights[lightIndex].Radius = radius;
 
       lightIndex++;
     }
 
-    // Update magic ring light (if active and we have remaining lights)
-    if (_showMagicRing && lightIndex < 16) {
+    // PRIORITY 3: Update magic ring light (lowest priority - optional decorative effect)
+    if (_showMagicRing && lightIndex < 32) {
       // Calculate pulsing intensity based on rotation angle
       static float ringPulseTime = 0.0f;
       ringPulseTime += deltaTime * 3.0f;
@@ -352,12 +387,12 @@ private:
     }
 
     // Disable remaining lights
-    for (int i = lightIndex; i < 16; i++) {
+    for (int i = lightIndex; i < 32; i++) {
       _lightingMaterial->gPointLights[i].Intensity = 0.0f;
     }
 
     // Update point light count
-    _lightingMaterial->gNumPointLights = 16;
+    _lightingMaterial->gNumPointLights = 32;
   }
   void init() override {
     // Initialize random seed for enemy wave motion
@@ -434,9 +469,9 @@ private:
     cameraLight.Radius = 60.0f;    // Softer falloff to avoid dark rim
     _lightingMaterial->gPointLights.push_back(cameraLight);
 
-    // Lights 1-15: Reserved for magic effects (fireballs, magic ring)
+    // Lights 1-31: Reserved for magic effects (fireballs, magic ring, explosions)
     // Initialize with zero intensity, will be updated in updateMagicLights()
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 31; i++) {
       LightingMaterial::PointLight magicLight;
       magicLight.Position = glm::vec3(0.0f);
       magicLight.Color = glm::vec3(0.0f);
@@ -445,7 +480,7 @@ private:
       _lightingMaterial->gPointLights.push_back(magicLight);
     }
 
-    _lightingMaterial->gNumPointLights = 16;
+    _lightingMaterial->gNumPointLights = 32;
   }
 
   void draw_ui() {
@@ -534,7 +569,7 @@ private:
 
     // Magic Light Effects
     if (ImGui::CollapsingHeader("Magic Light Effects")) {
-      ImGui::Text("Active Point Lights: %d/16",
+      ImGui::Text("Active Point Lights: %d/32",
                   _lightingMaterial->gNumPointLights);
       ImGui::Separator();
 
@@ -913,7 +948,7 @@ private:
 
           // 添加轻微晃动动画
           static float handMonsterAnimTime = 0.0f;
-          handMonsterAnimTime += 0.00f; // 动画速度
+          handMonsterAnimTime += 0.01f; // 动画速度
           if (handMonsterAnimTime > 360.0f)
             handMonsterAnimTime -= 360.0f;
 
@@ -1644,7 +1679,7 @@ private:
 
           // 添加轻微晃动动画
           static float handMonsterAnimTime = 0.0f;
-          handMonsterAnimTime += 0.00f; // 动画速度
+          handMonsterAnimTime += 0.01f; // 动画速度
           if (handMonsterAnimTime > 360.0f)
             handMonsterAnimTime -= 360.0f;
 
@@ -2113,8 +2148,24 @@ private:
       it->position += it->velocity * deltaTime;
       it->lifetime += deltaTime;
 
-      // Remove fireball if lifetime exceeded
-      if (it->lifetime >= it->maxLifetime) {
+      // Check if fireball is outside church boundaries (scaled 2x, centered at origin)
+      // Strict boundary: fireballs disappear immediately when leaving church
+      // Church boundary: approximately 50x50x30 units (considering 2x scale)
+      const float CHURCH_BOUNDARY_X = 50.0f;
+      const float CHURCH_BOUNDARY_Y_MAX = 30.0f;
+      const float CHURCH_BOUNDARY_Y_MIN = -10.0f;
+      const float CHURCH_BOUNDARY_Z = 50.0f;
+
+      bool isOutsideBoundary = (abs(it->position.x) > CHURCH_BOUNDARY_X ||
+                               it->position.y > CHURCH_BOUNDARY_Y_MAX ||
+                               it->position.y < CHURCH_BOUNDARY_Y_MIN ||
+                               abs(it->position.z) > CHURCH_BOUNDARY_Z);
+
+      // Remove fireball if lifetime exceeded or outside church boundaries
+      if (it->lifetime >= it->maxLifetime || isOutsideBoundary) {
+        if (isOutsideBoundary) {
+          printf("Fireball removed: outside church boundaries\n");
+        }
         it = _fireballEffects.erase(it);
       } else {
         ++it;
@@ -2154,6 +2205,77 @@ private:
       } else {
         ++it;
       }
+    }
+
+    // Collision detection between fireballs and enemies
+    for (auto fireballIt = _fireballEffects.begin(); fireballIt != _fireballEffects.end(); ) {
+        bool fireballHit = false;
+
+        // Check collision with manual enemies
+        for (auto enemyIt = _enemyEffects.begin(); enemyIt != _enemyEffects.end(); ) {
+            float distance = glm::length(fireballIt->position - enemyIt->position);
+            if (distance < 2.0f) { // Collision radius (adjust as needed)
+                // Create explosion effect at collision position (slightly elevated for visibility)
+                ExplosionEffect explosion;
+                explosion.position = enemyIt->position + glm::vec3(0.0f, 1.0f, 0.0f); // Lift up by 1 unit
+                explosion.color = glm::vec3(3.0f, 2.5f, 1.0f); // Warm white explosion (less harsh)
+                explosion.intensity = 400.0f; // Bright but comfortable explosion
+                explosion.radius = 50.0f; // Larger explosion radius
+                explosion.lifetime = 0.0f;
+                _explosionEffects.push_back(explosion);
+
+                // Remove both fireball and enemy
+                enemyIt = _enemyEffects.erase(enemyIt);
+                fireballHit = true;
+                printf("Manual enemy destroyed by fireball! Explosion created!\n");
+                break; // Exit enemy loop since fireball is destroyed
+            } else {
+                ++enemyIt;
+            }
+        }
+
+        // Check collision with combat enemies (if fireball not already hit)
+        if (!fireballHit) {
+            for (auto combatEnemyIt = _combatEnemies.begin(); combatEnemyIt != _combatEnemies.end(); ) {
+                float distance = glm::length(fireballIt->position - combatEnemyIt->position);
+                if (distance < 2.0f) { // Collision radius
+                    // Create explosion effect at collision position (slightly elevated for visibility)
+                    ExplosionEffect explosion;
+                    explosion.position = combatEnemyIt->position + glm::vec3(0.0f, 1.0f, 0.0f); // Lift up by 1 unit
+                    explosion.color = glm::vec3(3.0f, 2.5f, 1.0f); // Warm white explosion (less harsh)
+                    explosion.intensity = 400.0f; // Bright but comfortable explosion
+                    explosion.radius = 50.0f; // Larger explosion radius
+                    explosion.lifetime = 0.0f;
+                    _explosionEffects.push_back(explosion);
+
+                    // Remove both fireball and combat enemy
+                    combatEnemyIt = _combatEnemies.erase(combatEnemyIt);
+                    fireballHit = true;
+                    printf("Combat enemy destroyed by fireball! Explosion created!\n");
+                    break; // Exit combat enemy loop since fireball is destroyed
+                } else {
+                    ++combatEnemyIt;
+                }
+            }
+        }
+
+        if (fireballHit) {
+            fireballIt = _fireballEffects.erase(fireballIt);
+        } else {
+            ++fireballIt;
+        }
+    }
+
+    // Update explosion effects
+    for (auto it = _explosionEffects.begin(); it != _explosionEffects.end(); ) {
+        it->lifetime += deltaTime;
+
+        // Remove explosion if lifetime exceeded
+        if (it->lifetime >= it->maxLifetime) {
+            it = _explosionEffects.erase(it);
+        } else {
+            ++it;
+        }
     }
 
     // Combat mode logic
@@ -2312,6 +2434,9 @@ private:
 
   // Enemy effects
   std::vector<EnemyEffect> _enemyEffects;
+
+  // Explosion effects
+  std::vector<ExplosionEffect> _explosionEffects;
 
   // Combat mode
   bool _combatMode = false;
