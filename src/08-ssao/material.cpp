@@ -117,6 +117,7 @@ void SSAOMaterial::generateKernel() {
 
   gKernel.resize(64);
   for (unsigned int i = 0; i < 64; ++i) {
+    // 生成半球采样核心，Z值为正（在切线空间中朝向表面法线）
     glm::vec3 sample(randomFloats(generator) * 2.0 - 1.0,
                      randomFloats(generator) * 2.0 - 1.0,
                      randomFloats(generator));
@@ -159,8 +160,9 @@ void SSAOMaterial::use() {
 // Blur Material
 BlurMaterial::BlurMaterial() {
   _program = Program::create_from_files("shaders/ssao_blur.vert",
-                                        "shaders/ssao_blur.frag");
+                                        "shaders/ssdo_blur.frag");
   _gColorMapLocation = glGetUniformLocation(_program->get(), "gColorMap");
+  _gNormalMapLocation = glGetUniformLocation(_program->get(), "gNormalMap");
 }
 
 void BlurMaterial::use() {
@@ -169,6 +171,10 @@ void BlurMaterial::use() {
   glActiveTexture(GL_TEXTURE0);
   glBindTexture(GL_TEXTURE_2D, gColorMap != nullptr ? gColorMap->get() : 0);
   glUniform1i(_gColorMapLocation, 0);
+
+  glActiveTexture(GL_TEXTURE1);
+  glBindTexture(GL_TEXTURE_2D, gNormalMap != nullptr ? gNormalMap->get() : 0);
+  glUniform1i(_gNormalMapLocation, 1);
 }
 
 // SSDO Material
@@ -192,6 +198,7 @@ void SSDOMaterial::generateKernel() {
 
   gKernel.resize(64);
   for (unsigned int i = 0; i < 64; ++i) {
+    // 生成半球采样核心，Z值为正（在切线空间中朝向表面法线）
     glm::vec3 sample(randomFloats(generator) * 2.0 - 1.0,
                      randomFloats(generator) * 2.0 - 1.0,
                      randomFloats(generator));
@@ -328,7 +335,7 @@ void LightingMaterial::use() {
 
   // Set point lights
   glUniform1i(_gNumPointLightsLocation, gNumPointLights);
-  for (int i = 0; i < gNumPointLights && i < 4; i++) {
+  for (int i = 0; i < gNumPointLights && i < 64; i++) {
     std::ostringstream oss;
     oss << "gPointLights[" << i << "]";
     std::string baseName = oss.str();

@@ -15,6 +15,7 @@ uniform vec3 gKernel[MAX_KERNEL_SIZE];
 vec3 getNormal(vec2 uv) {
     return normalize(texture(gNormalMap, uv).xyz);
 }
+
 // 生成伪随机向量用于旋转采样核心
 vec3 getRandomVec(vec2 uv) {
     float r = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
@@ -26,10 +27,13 @@ void main() {
     vec3 Pos = texture(gPositionMap, TexCoord).xyz;
     vec3 Normal = getNormal(TexCoord);
     
-    // 背景检测：仅剔除无效(零)位置，避免远处被当成白底
-    if (dot(Pos, Pos) < 1e-8) { FragColor = vec4(1.0); return; }
+    // 背景检测：仅剔除无效(零)位置
+    if (dot(Pos, Pos) < 1e-8) { 
+        FragColor = vec4(1.0); 
+        return; 
+    }
 
-    // 构建TBN矩阵，用随机向量旋转采样核心
+    // 构建TBN矩阵用于将采样核心从切线空间转换到view space
     vec3 randomVec = getRandomVec(TexCoord);
     vec3 tangent = normalize(randomVec - Normal * dot(randomVec, Normal));
     vec3 bitangent = cross(Normal, tangent);
@@ -51,23 +55,41 @@ void main() {
         // 边界检查
         if (offset.x < 0.0 || offset.x > 1.0 || offset.y < 0.0 || offset.y > 1.0) continue;
 
-        validSamples++;
-
         // 读取该位置的实际深度
         float sampleDepth = texture(gPositionMap, offset.xy).z;
         
-        // 范围检查：放宽权重让遮挡在小半径下也可见
-        float rangeCheck = smoothstep(0.0, 1.0, (gSampleRad * 2.0) / max(1e-4, abs(Pos.z - sampleDepth)));
+        // 背景检测：如果采样点落在背景区域（深度为0），跳过该采样点
+        // 背景不应该产生遮挡
+        if (abs(sampleDepth) < 1e-6) {
+            continue;
+        }
         
-        // 深度比较：OpenGL view space中z为负，z更大(不那么负)表示更近
-        float bias = 0.008;
-        occlusion += (sampleDepth >= samplePos.z + bias ? 1.0 : 0.0) * rangeCheck;
+        validSamples++;
+        
+        // 范围检查
+        float rangeCheck = smoothstep(0.0, 1.0, gSampleRad / max(1e-4, abs(Pos.z - sampleDepth)));
+        
+        // 深度比较：在view space中，z为负值
+        // 更大的z值(不那么负)表示更靠近相机
+        // 如果采样点的实际深度比我们期望的采样位置更近，则发生遮挡
+        float bias = 0.025;
+        bool isOccluded = (sampleDepth > samplePos.z + bias);
+        
+        // 计算遮挡值
+        occlusion += (isOccluded ? 1.0 : 0.0) * rangeCheck;
     }
 
-    if (validSamples == 0) { FragColor = vec4(1.0); return; }
+    if (validSamples == 0) {
+        FragColor = vec4(1.0);
+        return;
+    }
 
-    float AO = 1.0 - (occlusion / float(validSamples));
+    // 计算最终的AO值
+    float ao = 1.0 - (occlusion / float(validSamples));
     
-    // 输出到单通道纹理
-    FragColor = vec4(AO, AO, AO, 1.0);
+    // 确保AO在合理范围
+    ao = clamp(ao, 0.0, 1.0);
+    
+    // 输出到单通道纹理：只使用R通道存储AO值
+    FragColor = vec4(ao, 0.0, 0.0, 1.0);
 }

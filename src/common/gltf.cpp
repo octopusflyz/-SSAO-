@@ -61,9 +61,9 @@ void Gltf::load_materials(tinygltf::Model &model) {
 
     // 根据模型名称决定材质处理方式
     bool is_magic_ring = _model_name.string().find("magic_ring") != std::string::npos;
-    bool is_church_or_character = _model_name.string().find("church") != std::string::npos ||
-                                  _model_name.string().find("elaina") != std::string::npos;
-
+    bool is_church = _model_name.string().find("church") != std::string::npos;
+    bool is_character = _model_name.string().find("elaina") != std::string::npos;
+ 
     if (is_magic_ring) {
       // 魔法阵：使用Specular-Glossiness处理
       auto ext_it = mat.extensions.find("KHR_materials_pbrSpecularGlossiness");
@@ -151,7 +151,7 @@ void Gltf::load_materials(tinygltf::Model &model) {
         m->roughness_factor = 0.5f;
         m->metallic_roughness = _white_tex_index;
       }
-    } else if (is_church_or_character) {
+    } else if (is_church || is_character) {
       // 教堂和人物：强制使用Metallic-Roughness处理
       // 即使它们有Specular-Glossiness扩展，也忽略它
       auto &pbr = mat.pbrMetallicRoughness;

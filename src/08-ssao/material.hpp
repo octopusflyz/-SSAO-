@@ -42,7 +42,7 @@ class SSAOMaterial : public IMaterial {
 public:
   Texture2D *gPositionMap = nullptr;
   Texture2D *gNormalMap = nullptr;
-  float gSampleRad = 0.5f;
+  float gSampleRad = 2.0f; // 增加采样半径以获得更明显的AO效果
   glm::mat4 gProj{};
   std::vector<glm::vec3> gKernel;
 
@@ -64,7 +64,7 @@ public:
   Texture2D *gPositionMap = nullptr;
   Texture2D *gNormalMap = nullptr;
   Texture2D *gAlbedoMap = nullptr;
-  float gSampleRad = 0.5f;
+  float gSampleRad = 2.0f; // 增加采样半径以获得更明显的SSDO效果
   glm::mat4 gProj{};
   glm::mat4 gView{};
   std::vector<glm::vec3> gKernel;
@@ -87,6 +87,7 @@ private:
 class BlurMaterial : public IMaterial {
 public:
   Texture2D *gColorMap = nullptr;
+  Texture2D *gNormalMap = nullptr;
 
   BlurMaterial();
   void use() override;
@@ -94,6 +95,7 @@ public:
 private:
   std::unique_ptr<Program> _program;
   GLint _gColorMapLocation;
+  GLint _gNormalMapLocation;
 };
 
 class LightingMaterial : public IMaterial {

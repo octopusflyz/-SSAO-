@@ -22,5 +22,6 @@ void main() {
 
     aoValue /= 16.0;
 
-    FragColor = vec4(aoValue, aoValue, aoValue, 1.0);
+    // 只输出到R通道，保持与输入格式一致
+    FragColor = vec4(aoValue, 0.0, 0.0, 1.0);
 }

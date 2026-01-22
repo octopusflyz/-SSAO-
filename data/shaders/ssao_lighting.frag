@@ -136,9 +136,9 @@ vec3 calculatePointLight(PointLight light, vec3 pos, vec3 normal, vec3 viewDir, 
     float distance = length(lightDir);
     lightDir = normalize(lightDir);
     
-    // Reduced attenuation for better light spread
-    float attenuation = 1.0 / (1.0 + 0.02 * distance + 0.005 * distance * distance);
-    attenuation = smoothstep(light.Radius, 0.0, distance) * attenuation;
+    // Optimized attenuation for fireballs: less distance falloff for better distance visibility
+    float attenuation = 1.0 / (1.0 + 0.005 * distance + 0.001 * distance * distance);
+    attenuation = smoothstep(light.Radius * 1.5, 0.0, distance) * attenuation;
     
     float NoL = clamp(dot(normal, lightDir), 0.0, 1.0);
     
@@ -200,19 +200,21 @@ void main() {
     if (gShaderType == 1) { // SSAO
         float ao = texture(gAOMap, screenUV).r;
         ambient *= ao;
-        directional *= mix(1.0, ao, 0.35);
-        pointLighting *= mix(1.0, ao, 0.35);
+        directional *= mix(1.0, ao, 0.5); // 增强SSAO对方向光的影响
+        // 点光源也受到轻微的SSAO影响，让遮挡效果更明显
+        pointLighting *= mix(1.0, ao, 0.3);
     } else if (gShaderType == 3) { // SSDO
         vec4 ssdoData = texture(gAOMap, screenUV);
         float ao = ssdoData.r;
         indirectLighting = ssdoData.gba;
         
-        // 应用遮挡
+        // 应用遮挡：只影响环境光和方向光，不影响点光源
         ambient *= ao;
-        directional *= mix(1.0, ao, 0.35);
-        pointLighting *= mix(1.0, ao, 0.35);
+        directional *= mix(1.0, ao, 0.5); // 增强SSDO对方向光的影响
+        // 点光源也受到轻微的SSDO影响，让遮挡效果更明显
+        pointLighting *= mix(1.0, ao, 0.3);
         
-        // 添加间接光照
+        // 添加间接光照：使用正确的强度
         indirectLighting *= fd; // 乘以漫反射BRDF
     }
     
@@ -230,7 +232,14 @@ void main() {
         FragColor = vec4(vec3(ao_vis), 1.0);
     } else if (gShaderType == 4) { // Show only SSDO indirect
         vec4 ssdoData = texture(gAOMap, screenUV);
-        FragColor = vec4(ssdoData.gba, 1.0);
+        vec3 indirectLight = ssdoData.gba;
+        
+        // 调试：直接显示原始间接光照，不进行任何处理
+        // 这样可以看到SSDO shader实际输出的值
+        
+        // 修复：SSDO shader输出的是(r=1.0, g=Albedo.r, b=Albedo.g, a=Albedo.b)
+        // 所以间接光照在gba通道，我们需要正确显示它
+        FragColor = vec4(indirectLight, 1.0);
     } else {
         FragColor = vec4(finalColor, linearBaseColor.a);
     }

@@ -24,6 +24,16 @@ void Framebuffer::init(Texture2D **color_attachments,
                            0);
   }
 
+  // 设置draw buffers，确保所有颜色附件都正确写入
+  if (color_attachment_count > 0) {
+    GLenum *drawBuffers = new GLenum[color_attachment_count];
+    for (uint32_t i = 0; i < color_attachment_count; i++) {
+      drawBuffers[i] = GL_COLOR_ATTACHMENT0 + i;
+    }
+    glDrawBuffers(color_attachment_count, drawBuffers);
+    delete[] drawBuffers;
+  }
+
   if (depth_stencil_attachment != nullptr) {
     glFramebufferTexture2D(GL_FRAMEBUFFER,
                            GL_DEPTH_STENCIL_ATTACHMENT,
